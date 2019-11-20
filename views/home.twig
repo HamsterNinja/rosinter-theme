@@ -12,18 +12,12 @@
 <div class="trainings_block">
 	<div class="container">
 		<div class="trainings_block-inner">
-			<div class="training-item">
-				<div class="training-item-name">Тренинги</div>
-				<div class="training-item-link"><a href="">Узнать подробне</a></div>
-			</div>
-			<div class="training-item">
-				<div class="training-item-name">Тренинги</div>
-				<div class="training-item-link"><a href="">Узнать подробне</a></div>
-			</div>
-			<div class="training-item">
-				<div class="training-item-name">Тренинги</div>
-				<div class="training-item-link"><a href="">Узнать подробне</a></div>
-			</div>
+			{% for item in 0..2 %}
+				<div class="training-item" style="background: linear-gradient(360deg, #000000 -21.92%, rgba(179, 179, 179, 0) 48.24%), url(./assets/images/tren.jpg);">
+					<div class="training-item-name">Тренинги</div>
+					<div class="training-item-link"><a href="">Узнать подробне</a></div>
+				</div>
+			{% endfor %}
 		</div>
 	</div>	
 </div>
@@ -32,7 +26,7 @@
 		<div class="main-page-title">Безопасность пищи</div>
 		<div class="food-safety-inner">
 			{% for item in 0..2 %}
-				<div class="food-safety-item">
+				<div class="food-safety-item" style="background: linear-gradient(360deg, #000000 -21.92%, rgba(0, 0, 0, 0) 54.19%), url(./assets/images/food.jpg);">
 					<div class="food-safety-content">
 						<div class="food-safety-name">ХАССП как конкурентное преимущество</div>
 						<hr class="safety-decore">

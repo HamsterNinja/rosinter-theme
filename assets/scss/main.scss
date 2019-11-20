@@ -74,28 +74,102 @@ ul{
     display: inline-block;
 }
 .trainings_block{}
-.trainings_block-inner{}
-.training-item{}
-.training-item-name{}
-.training-item-link{}
-.training-item-link a{}
-.food-safety{}
-.main-page-title{}
+.trainings_block-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(301px, 1fr));
+    grid-gap: 40px;
+    padding: 50px 0 45px;
+    border-bottom: 1px solid #0C143B;
+}
+.training-item {
+    height: 203px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 15px;
+}
+.training-item-name {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 49px;
+    color: #FFFFFF;
+    margin-bottom: 12px;
+}
+.training-item-link a {
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+    background: #0C143B;
+    border-radius: 20px;
+    text-decoration: none;
+    padding: 8px 20px;
+    display: inline-block;
+}
+.food-safety {
+    padding-top: 45px;
+}
+.main-page-title {
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 41px;
+    color: #191A1F;
+    margin-bottom: 50px;
+}
 .food-safety-inner{}
 .food-safety-item{}
 .food-safety-content{}
-.food-safety-name{}
-.safety-decore{}
-.food-safety-time{}
-.food-safety-time-name{}
-.food-safety-time-value{}
+.food-safety-name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 18px;
+    color: #191A1F;
+}
+hr.safety-decore {
+    background-color: #9EDAFF;
+    height: 2px;
+    width: 40px;
+    border: none;
+    margin: 10px 0;
+}
+.food-safety-time-name {
+    font-size: 12px;
+    line-height: 16px;
+    color: #191A1F;
+}
+.food-safety-time-value{
+	font-size: 12px;
+	line-height: 16px;
+	color: #191A1F;
+}
 .food-safety-text{}
-.food-safety-text p{}
+.food-safety-text p{
+	font-size: 12px;
+	line-height: 16px;
+	color: #191A1F;
+}
 .food-safety-text ul{}
-.food-safety-text ul li{}
+.food-safety-text ul li{
+	font-size: 12px;
+	line-height: 16px;
+	color: #191A1F;
+}
 .food-safety-links{}
-.link-sign{}
-.view-more{}
+.link-sign{
+	font-size: 14px;
+	line-height: 19px;
+	color: #FFFFFF;
+	background: #0C143B;
+	border: 1px solid #0C143B;
+	border-radius: 20px;
+	text-decoration: none;
+}
+.view-more{
+	font-size: 14px;
+	line-height: 19px;
+	color: #8A8A8A;
+}
 .teachers_block{}
 .main-page-title{}
 .teachers_block-inner{}
