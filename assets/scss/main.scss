@@ -109,6 +109,7 @@ ul{
 }
 .food-safety {
     padding-top: 45px;
+    font-size: 0;
 }
 .main-page-title {
     font-weight: 600;
@@ -117,9 +118,37 @@ ul{
     color: #191A1F;
     margin-bottom: 50px;
 }
-.food-safety-inner{}
-.food-safety-item{}
-.food-safety-content{}
+.food-safety-inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(275px,1fr));
+    grid-gap: 40px;
+}
+.food-safety-item {
+    box-shadow: 0px 4px 4px rgba(0,0,0,0.25);
+    height: 347px;
+    overflow: hidden;
+    position: relative;
+}
+.food-safety-item-image{
+	background-image: linear-gradient(360deg, #000000 -21.92%, rgba(0, 0, 0, 0) 54.19%);
+}
+.food-safety-item-image img{
+	height: 243px;
+	height: 100%;
+	object-fit: cover;
+}
+.food-safety-content {
+    background-color: #fff;
+    padding: 15px 17px 30px 17px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 245px;
+    transition: 0.3s ease;
+}
+.food-safety-item:hover .food-safety-content{
+	top: 0;
+}
 .food-safety-name {
     font-weight: 600;
     font-size: 18px;
@@ -137,42 +166,63 @@ hr.safety-decore {
     font-size: 12px;
     line-height: 16px;
     color: #191A1F;
+    margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: middle;
 }
 .food-safety-time-value{
 	font-size: 12px;
 	line-height: 16px;
 	color: #191A1F;
+	margin-bottom: 10px;
+	display: inline-block;
+	vertical-align: middle;
 }
-.food-safety-text{}
+.food-safety-text {
+    height: 175px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 10px;
+}
+.food-safety-text:after{
+	content: "";
+	display: block;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	position: absolute;
+	height: 66px;
+	background: linear-gradient(0deg, #FFFFFF 26.77%, rgba(255, 255, 255, 0) 212.86%);
+} 
 .food-safety-text p{
 	font-size: 12px;
 	line-height: 16px;
 	color: #191A1F;
 }
-.food-safety-text ul{}
-.food-safety-text ul li{
-	font-size: 12px;
-	line-height: 16px;
-	color: #191A1F;
-}
 .food-safety-links{}
-.link-sign{
-	font-size: 14px;
-	line-height: 19px;
-	color: #FFFFFF;
-	background: #0C143B;
-	border: 1px solid #0C143B;
-	border-radius: 20px;
-	text-decoration: none;
+.link-sign {
+    font-size: 14px;
+    line-height: 19px;
+    color: #FFFFFF;
+    background: #0C143B;
+    border: 1px solid #0C143B;
+    border-radius: 20px;
+    text-decoration: none;
+    padding: 6px 18px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
 }
 .view-more{
 	font-size: 14px;
 	line-height: 19px;
 	color: #8A8A8A;
+	text-decoration: none;
+	display: inline-block;
+	vertical-align: middle;
 }
 .teachers_block{}
 .main-page-title{}
-.teachers_block-inner{}
 .teacher-item{}
 .teacher-item-photo{}
 .teacher-item-photo img{}
