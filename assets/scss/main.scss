@@ -21,6 +21,12 @@ body {
 img {
     max-width: 100%;
 }
+ul,p,h1,h2,h3,h4,h5,h6{
+	margin: 0;
+}
+ul{
+	padding: 0;
+}
 .container{
 	max-width: 1230px;
 	width: 100%;
@@ -28,13 +34,45 @@ img {
 	padding: 0 15px;
 }
 .main-content{}
-.main-banner{}
-.main-banner-title{}
-.main-banner-title span{}
-.main-banner-text{}
-.main-banner-text p{}
-.main-banner-link{}
-.main-banner-link a{}
+.main-banner {
+    padding: 155px 0 110px;
+    background-size: auto,auto,auto,cover !important;
+    background-repeat-y: no-repeat!important;
+}
+.main-banner-title {
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    max-width: 540px;
+    color: #0C143B;
+    margin-bottom: 30px;
+}
+.main-banner-title span{
+	color: #FE334A;
+}
+.main-banner-text {
+    max-width: 540px;
+    margin-bottom: 30px;
+}
+.main-banner-text p{
+	font-size: 18px;
+    line-height: 25px;
+    color: #0C143B;
+}
+.main-banner-link{
+	margin-bottom: 25px;
+}
+.main-banner-link a {
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+    background: #0C143B;
+    border: 1px solid #0c143b;
+    border-radius: 20px;
+    text-decoration: none;
+    padding: 7px 19px;
+    display: inline-block;
+}
 .trainings_block{}
 .trainings_block-inner{}
 .training-item{}

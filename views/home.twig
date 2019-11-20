@@ -1,8 +1,8 @@
 {% include "partials/header.twig" %}
 <main class='main-content' id="app">
-<div class="main-banner">
-	<div class="conatiner">
-		<div class="main-banner-title"><span>Мы готовим</span> профессионалов</div>
+<div class="main-banner" style="background: url(./assets/images/ban_decore.png)0% 101%,linear-gradient(121.06deg, #FFFFFF 12.18%, rgba(255, 255, 255, 0) 60.29%), linear-gradient(179.29deg, #FFFFFF 1.41%, rgba(141, 141, 141, 0) 65.56%),url(./assets/images/slide.jpg);">
+	<div class="container">
+		<div class="main-banner-title">Мы готовим <span>профессионалов</span></div>
 		<div class="main-banner-text">
 			<p>Важнейшая составляющая успеха любого бизнеса – это люди. Мы искренне верим, что каждый человек обладает уникальными талантами, которые необходимо развивать в течение всей жизни.</p>
 		</div>
@@ -31,7 +31,7 @@
 	<div class="container">
 		<div class="main-page-title">Безопасность пищи</div>
 		<div class="food-safety-inner">
-			{% for item in 2 %}
+			{% for item in 0..2 %}
 				<div class="food-safety-item">
 					<div class="food-safety-content">
 						<div class="food-safety-name">ХАССП как конкурентное преимущество</div>
