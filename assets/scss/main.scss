@@ -222,13 +222,41 @@ hr.safety-decore {
 	vertical-align: middle;
 }
 .teachers_block{}
-.main-page-title{}
-.teacher-item{}
-.teacher-item-photo{}
-.teacher-item-photo img{}
-.teacher-item-name{}
+.teachers_block-inner {
+    display: grid;
+    grid-gap: 55px;
+    grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+    text-align: center;
+}
+.teacher-item{
+	text-decoration: none;
+}
+.teacher-item-photo {
+    width: 227px;
+    height: 227px;
+    margin: 0 auto 20px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.teacher-item-photo img{
+	width: 227px;
+    height: 227px;
+    object-fit: cover;
+    object-position: 50%;
+}
+.teacher-item-name {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 20px;
+    color: #FE334A;
+    margin-bottom: 20px;
+}
 .teacher-item-text{}
-.teacher-item-text p{}
+.teacher-item-text p {
+    font-size: 12px;
+    line-height: 16px;
+    color: #0C143B;
+}
 
 
 @import 'pages/home';
