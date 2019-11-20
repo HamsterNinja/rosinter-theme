@@ -1,7 +1,83 @@
 {% include "partials/header.twig" %}
 <main class='main-content' id="app">
-<h1>1</h1>
-
-
+<div class="main-banner">
+	<div class="conatiner">
+		<div class="main-banner-title"><span>Мы готовим</span> профессионалов</div>
+		<div class="main-banner-text">
+			<p>Важнейшая составляющая успеха любого бизнеса – это люди. Мы искренне верим, что каждый человек обладает уникальными талантами, которые необходимо развивать в течение всей жизни.</p>
+		</div>
+		<div class="main-banner-link"><a href="">Узнать подробне</a></div>
+	</div>	
+</div>
+<div class="trainings_block">
+	<div class="container">
+		<div class="trainings_block-inner">
+			<div class="training-item">
+				<div class="training-item-name">Тренинги</div>
+				<div class="training-item-link"><a href="">Узнать подробне</a></div>
+			</div>
+			<div class="training-item">
+				<div class="training-item-name">Тренинги</div>
+				<div class="training-item-link"><a href="">Узнать подробне</a></div>
+			</div>
+			<div class="training-item">
+				<div class="training-item-name">Тренинги</div>
+				<div class="training-item-link"><a href="">Узнать подробне</a></div>
+			</div>
+		</div>
+	</div>	
+</div>
+<div class="food-safety">
+	<div class="container">
+		<div class="main-page-title">Безопасность пищи</div>
+		<div class="food-safety-inner">
+			{% for item in 2 %}
+				<div class="food-safety-item">
+					<div class="food-safety-content">
+						<div class="food-safety-name">ХАССП как конкурентное преимущество</div>
+						<hr class="safety-decore">
+						<div class="food-safety-time">
+							<div class="food-safety-time-name">Очно (2 дня 16 часов)</div>
+							<div class="food-safety-time-value">5 занятий</div>
+						</div>
+						<div class="food-safety-text">
+							<p>В результате обучения:</p>
+							<ul>
+								<li>Вы поймете, что такое система стандартов ХАССП в общественном питании применительно к российской действительности.</li>
+								<li>Научитесь использовать ее для повышения эффективности работы своей компании и успешного прохождения проверок контролирующих органов.</li>
+								<li>Получите работающие инструменты внедрения системы.</li>
+								<li>Выполните большое количество интересных практических заданий.</li>
+							</ul>
+							<p>Всем участникам, прошедшим обучение, выдается Сертификат о повышении квалификации установленного образца.</p>
+						</div>
+						<div class="food-safety-links">
+							<a class="link-sign" href="">Записаться</a>
+							<a class="view-more" href="">Узнать больше</a>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+<div class="teachers_block">
+	<div class="container">
+		<div class="main-page-title">Преподаватели</div>
+		<div class="teachers_block-inner">
+			{% for item in 0..3 %}
+				<a href="" class="teacher-item">
+					<div class="teacher-item-photo">
+						<img src="./assets/images/teacher.jpg" alt="">
+					</div>
+					<div class="teacher-item-name">Шишкевич Злата</div>
+					<div class="teacher-item-text">
+						<p>Региональный менеджер по персоналу</p>
+						<p>Преподаватель Университета Росинтер</p>
+					</div>
+				</a>
+			{% endfor %}
+		</div>
+	</div>
+</div>
 </main>
 {% include "partials/footer.twig" %}

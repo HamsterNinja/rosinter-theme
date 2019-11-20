@@ -59,7 +59,7 @@
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f87cb256b2c38b769680"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "d9f75bcccea81a607ed1"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -700,7 +700,7 @@
 /******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
 /******/
 /******/ 	// __webpack_public_path__
-/******/ 	__webpack_require__.p = "C:\\Users\\Андрей\\Downloads\\start-template\\assets";
+/******/ 	__webpack_require__.p = "C:\\xampp\\htdocs\\rosinter-theme\\assets";
 /******/
 /******/ 	// __webpack_hash__
 /******/ 	__webpack_require__.h = function() { return hotCurrentHash; };
@@ -907,9 +907,45 @@ module.exports = Html5Entities;
 
 /***/ }),
 /* 1 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-console.log('w5');
+"use strict";
+
+
+$('.main-slick').slick({
+  slidesToShow: 1,
+  autoplay: false,
+  autoplaySpeed: 3000,
+  arrows: true,
+  dots: true,
+  swipeToSlide: true
+});
+$('.projects-slick').slick({
+  slidesToShow: 1,
+  centerMode: true,
+  centerPadding: '500px',
+  autoplay: false,
+  autoplaySpeed: 3000,
+  arrows: true,
+  dots: false,
+  swipeToSlide: true,
+  responsive: [{
+    breakpoint: 1600,
+    settings: {
+      arrows: true,
+      centerMode: true,
+      centerPadding: '350px'
+    }
+  }, {
+    breakpoint: 1280,
+    settings: {
+      arrows: false,
+      centerMode: true,
+      centerPadding: '200px',
+      slidesToShow: 1
+    }
+  }]
+});
 
 /***/ }),
 /* 2 */
