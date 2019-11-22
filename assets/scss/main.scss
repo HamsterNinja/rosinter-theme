@@ -382,7 +382,115 @@ hr.safety-decore {
     text-align: center;
     color: #FFFFFF;
 }
+.hassp-teacher-item {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+}
+.hassp-teacher-item-img {
+    width: 105px;
+    height: 105px;
+    border-radius: 50%;
+    margin-right: 19px;
+}
+.hassp-teacher-item-img img{
+    width: 105px;
+    height: 105px;
+    object-fit: cover;
+}
+.hassp-teacher-item-info {
+    max-width: 327px;
+    position: relative;
+    padding-bottom: 12px;
+}
+.hassp-teacher-item-name {
+    font-size: 24px;
+    line-height: 33px;
+    color: #FE334A;
+    margin-bottom: 15px;
+}
+.hassp-teacher-item-text{
+    margin-bottom: 15px;
+}
+.hassp-teacher-item-text p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19px;
+    color: #0C143B;
+}
 
+.hassp-view-more,
+.hassp-hide {
+    font-size: 16px;
+    line-height: 22px;
+    text-decoration: underline;
+    color: #0C143B;
+    position: absolute;
+    right: 0;
+}
+.hassp-view-more{
+    bottom: 0;
+}
+.hassp-hide{
+    bottom: 13px;
+}
+.hassp-teacher-content {
+    position: relative;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #9EDAFF;
+}
+.hasp-teacher-gallery {
+    display: grid;
+    grid-gap: 15px;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    margin-bottom: 30px;
+}
+.hasp-teatcher-text p {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19px;
+    color: #0C143B;
+    margin-bottom: 23px;
+}
+.hasp-teatcher-text b {
+    font-weight: 600;
+}
+.hasp-teatcher-text p a {
+    font-size: 14px;
+    line-height: 19px;
+    color: #0C143B;
+    text-decoration: none;
+}
+.hassp-content-row-info table{
+    border-collapse: collapse;
+}
+.hassp-content-row-info table tbody tr:first-child td {
+    background-color: #0C143B;
+    color: #fff;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    vertical-align: middle;
+    padding: 3px 3px 5px;
+}
+
+.hassp-content-row-info table tbody tr td {
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 16px;
+    color: #333333;
+    text-align: center;
+    vertical-align: top;
+    border: 1px solid #0C143B;
+    width: calc(100% / 4);
+    padding: 10px 3px;
+}
+.hassp-content-row-text{}
+.hassp-content-row-text ul{}
+.hassp-content-row-text ul li{}
+.hassp-content-row-text ul li img{
+    margin-top: 20px;
+}
 @import 'pages/home';
 @import 'components/buttons';
 @import 'layout/header';
