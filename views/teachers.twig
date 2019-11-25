@@ -1,0 +1,25 @@
+{% include "partials/header.twig" %}
+<main class='main-content' id="app">
+	<div class="teachers-page">
+		<div class="teachers_block">
+			<div class="container">
+				<div class="hassp-content-row-title">Преподаватели</div>
+				<div class="teachers_block-inner">
+					{% for item in 0..7 %}
+						<a href="" class="teacher-item">
+							<div class="teacher-item-photo">
+								<img src="./assets/images/teacher.jpg" alt="">
+							</div>
+							<div class="teacher-item-name">Шишкевич Злата</div>
+							<div class="teacher-item-text">
+								<p>Региональный менеджер по персоналу</p>
+								<p>Преподаватель Университета Росинтер</p>
+							</div>
+						</a>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+	</div>
+</main>
+{% include "partials/footer.twig" %}
