@@ -485,18 +485,202 @@ hr.safety-decore {
     width: calc(100% / 4);
     padding: 10px 3px;
 }
-.hassp-content-row-text{}
-.hassp-content-row-text ul{}
-.hassp-content-row-text ul li{}
-.hassp-content-row-text ul li img{
-    margin-top: 20px;
+.hassp-content-row-docs {
+    max-width: 480px;
 }
-.teachers-page {
-    padding-top: 65px;
+.hassp-content-doc {
+    margin-bottom: 45px;
 }
+.hassp-content-doc-value{
+    margin-bottom: 20px;
+}
+.hassp-content-doc-value:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 9px;
+    height: 9px;
+    background-color: #FE334A;
+    border-radius: 50%;
+    margin-top: -2px;
+    margin-right: 7px;
+}
+.hassp-content-doc-value span {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 19px;
+    color: #0C143B;
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - 16px);
+}
+.hassp-content-doc-image {
+    text-align: center;
+}
+.hassp-content-doc-image.hover{
+  position: relative;  
+}
+.hassp-content-doc-image.hover img {
+    position: absolute;
+    top: 0;
+    left: calc(100% / 2 - 195px);
+    transition: 0.3s ease;
+}
+.hassp-content-doc-image.hover img:last-child{
+    opacity: 0;
+}
+.hassp-content-doc-image.hover:hover img:first-child{
+    opacity: 0;
+}
+.hassp-content-doc-image.hover:hover img:last-child{
+    opacity: 1;
+}
+
 .teachers-page .hassp-content-row-title{
     margin-bottom: 50px;
 }
+.reviews_page-content{
+    padding: 60px 0;
+}
+.top_padding {
+    padding-top: 108px;
+}
+.header-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.review-add a {
+    font-size: 18px;
+    display: inline-block;
+    line-height: 25px;
+    color: #FFFFFF;
+    background: #0C143B;
+    border: 1px solid #0C143B;
+    border-radius: 20px;
+    text-decoration: none;
+    padding: 6px 26px;
+}
+
+.header-title {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.review-item {
+    text-align: center;
+    border-bottom: 1px solid #0C143B;
+    padding: 40px 0;
+}
+.review-item:last-child{
+    border: none;
+}
+.review-item-img {
+    margin-bottom: 15px;
+}
+.review-item-name {
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 10px;
+}
+.review-item-job {
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #333333;
+    margin-bottom: 20px;
+}
+.review-item-text {
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #333333;
+    max-width: 490px;
+    width: 100%;
+    margin: 0 auto;
+}
+.vue-pagination {
+  text-align: center;
+  font-size: 18px;
+  list-style: none;
+  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.vue-pagination li.page-back a, .vue-pagination li.page-next a {
+    border: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+.vue-pagination li.page-back a span, .vue-pagination li.page-next a span {
+    height: 32px;
+}
+.vue-pagination li.page-back a span svg, .vue-pagination li.page-next a span svg{
+    height: 24px;
+}
+.vue-pagination li {
+    vertical-align: middle;
+    margin-right: 10px;
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    height: 40px;
+    width: 40px;
+}
+.vue-pagination li a {
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 38px;
+    text-align: center;
+    color: #0C143B;
+    border: 1px solid #0C143B;
+    box-sizing: border-box;
+    border-radius: 30px;
+    height: 40px;
+    width: 40px;
+    display: inline-block;
+}
+.vue-pagination span.current {
+    display: inline-flex;
+    color: #fff;
+    background-color: #08154a;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    text-decoration: none;
+    margin-right: 10px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 40px;
+    text-align: center;
+    color: #FFFFFF;
+    width: 40px;
+    height: 40px;
+}
+.vue-pagination li.current a {
+  width: 25px;
+  height: 25px;
+  display: inline-flex;
+  color: #fff;
+  background-color: #08154a;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 24px;
+  line-height: 28px;
+}
+
 @import 'pages/home';
 @import 'components/buttons';
 @import 'layout/header';
