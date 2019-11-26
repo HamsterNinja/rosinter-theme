@@ -33,6 +33,18 @@ ul{
 	margin: 0 auto;
 	padding: 0 15px;
 }
+.all-page-title{
+    margin-bottom: 25px;
+}
+.all-page-title h1{
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 49px;
+    color: #0C143B;
+    border-bottom: 2px solid #FE334A;
+    display: inline-block;
+    padding-bottom: 10px;
+}
 .main-content{}
 .main-banner {
     padding: 155px 0 110px;
@@ -830,6 +842,21 @@ input.fulltimeSubmit {
     opacity: 0.6;
     z-index: 99999;
     transform: scale(0);
+}
+.teachers_page{
+    padding-bottom: 50px;
+}
+.teachers_page-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.teachers_page-content .hasp-teatcher-text:first-child {
+    max-width: 480px;
+    width: 50%;
+}
+.teachers_page-content .hasp-teacher-gallery {
+    width: 50%;
 }
 @import 'pages/home';
 @import 'components/buttons';
