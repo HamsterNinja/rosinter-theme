@@ -858,6 +858,78 @@ input.fulltimeSubmit {
 .teachers_page-content .hasp-teacher-gallery {
     width: 50%;
 }
+.about-us-content.white {
+    background-image: url(../images/blue_decore.png);
+    background-position: 0 calc(100% + 27px);
+    background-repeat-y: no-repeat;
+    padding: 10px 0 80px;
+}
+.about-us-content.blue {
+    background-color: #0C143B;
+    padding: 0 0 60px 0;
+    margin-bottom: 50px;
+}
+.about-us-content.white .about-us-title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 27px;
+    text-transform: uppercase;
+    color: #0C143B;
+    margin-bottom: 20px;
+}
+.about-us-content .about-us-text{
+    margin-bottom: 40px;
+}
+.about-us-content.white .about-us-text p{
+    font-size: 18px;
+    line-height: 25px;
+    color: #0C143B;
+    margin-bottom: 25px;
+}
+.about-us-content.blue .about-us-text p{
+    font-size: 18px;
+    line-height: 25px;
+    color: #FFFFFF;
+    margin-bottom: 25px;
+}
+.about-us-content.white .about-us-triggers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+    justify-content: space-between;
+    grid-gap: 135px;
+}
+.about-us-content.blue .about-us-triggers {
+    display: grid;
+    justify-content: space-between;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-gap: 50px;
+}
+.about-us-content.white .about-us-trigger{
+    text-align: center;
+}
+.about-us-content.blue .about-us-trigger {
+    text-align: center;
+    max-width: 450px;
+}
+.about-us-content.blue .about-us-trigger:last-child{
+    justify-self: flex-end;
+}
+.about-us-trigger-img {
+    margin-bottom: 18px;
+}
+.about-us-content.white .about-us-trigger-text{
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #0C143B;
+}
+.about-us-content.blue .about-us-trigger-text{
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 25px;
+    text-align: center;
+    color: #FFFFFF;
+}
 @import 'pages/home';
 @import 'components/buttons';
 @import 'layout/header';
