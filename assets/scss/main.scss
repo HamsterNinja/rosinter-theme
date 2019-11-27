@@ -947,11 +947,10 @@ input.fulltimeSubmit {
     padding: 20px 0;
 }
 .webinar-header {
-    margin-bottom: 40px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
 }
 
 .webinar-lesson p {
@@ -989,7 +988,14 @@ input.fulltimeSubmit {
 .webinar-title {
     font-size: 24px;
     line-height: 33px;
+    color: #0C143B;
+    width: calc(100% - 205px);
+}
+.webinar-title.active{
     color: #FE334A;
+}
+.webinar-content-inner {
+    padding-top: 40px;
 }
 .webinar-content-column {
     display: inline-block;
