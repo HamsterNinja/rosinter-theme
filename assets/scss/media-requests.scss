@@ -1,0 +1,95 @@
+@media(max-width: 1120px){
+.module-form input {
+    margin-bottom: 16px;
+    width: 100%;
+}
+}
+@media(max-width: 1080px){
+.about-us-content.white .about-us-triggers {
+    grid-gap: 45px;
+}
+}
+@media(max-width: 1020px){
+.hassp-content-column {
+    width: 100%;
+}
+.hassp-content-column:first-child {
+    margin-bottom: 267px;
+}
+
+}
+@media(max-width: 890px){
+.main-header .container {
+    display: grid;
+    grid-gap: 18px;
+    grid-template-areas:
+        "logo header-info"
+        "header-menu header-menu";
+    align-items: center;
+}
+.teachers_page-content .hasp-teatcher-text:first-child {
+    max-width: 100%;
+    width: 100%;
+}
+.teachers_page-content .hasp-teacher-gallery {
+    width: 100%;
+}
+.webinar-content-column {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    margin-right: 0;
+    padding-bottom: 40px;
+}
+}
+@media(max-width: 767px){
+.footer-content {
+    background: #fff;
+}
+.footer-info {
+    width: 100%;
+    padding: 20px 15px;
+    border-radius: 0;
+    display: block;
+}
+.footer-info:after{
+	display: none;
+}
+.footer-map {
+    width: 100%;
+}
+}
+@media(max-width: 720px){
+.btn-hamburger {
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: flex-end;
+    padding: 0;
+}
+}
+@media(max-width: 580px){
+.fulltime-form-content form input {
+    margin-bottom: 16px;
+    width: 100%;
+}
+.hassp-content-row-info {
+    overflow: scroll;
+}
+}
+@media(max-width: 500px){
+.copyright {
+    font-size: 14px;
+    line-height: 25px;
+    text-align: left;
+    color: #0C143B;
+    margin: 7px 0;
+}
+.main-banner-title {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    max-width: 540px;
+    color: #0C143B;
+    margin-bottom: 30px;
+}
+}
