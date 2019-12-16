@@ -75,9 +75,8 @@ add_action('wp_footer', 'add_scripts');
 function add_scripts() {
     time_enqueuer('jquerylatest', '/assets/js/vendors/jquery-3.4.1.min.js', 'script', true);
     time_enqueuer('slick', '/assets/js/vendors/slick.js', 'script', true);
-    time_enqueuer('lazyload', '/assets/js/vendors/lazyload.min.js', 'script', true);
     time_enqueuer('app', '/assets/js/main.bundle.js', 'script', true);
-    
+
     wp_localize_script( 'app', 'SITEDATA', array(
         'url' => get_site_url(),
         'themepath' => get_template_directory_uri(),

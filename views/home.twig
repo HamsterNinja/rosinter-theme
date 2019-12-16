@@ -1,6 +1,6 @@
 {% include "partials/header.twig" %}
 <main class='main-content' id="app">
-<div class="main-banner" style="background: url(./assets/images/ban_decore.png)0% 101%,linear-gradient(121.06deg, #FFFFFF 12.18%, rgba(255, 255, 255, 0) 60.29%), linear-gradient(179.29deg, #FFFFFF 1.41%, rgba(141, 141, 141, 0) 65.56%),url(./assets/images/slide.jpg) 0 100%;">
+<div class="main-banner" style="background: url({{ site.theme.link }}/assets/images/ban_decore.png)0% 101%,linear-gradient(121.06deg, #FFFFFF 12.18%, rgba(255, 255, 255, 0) 60.29%), linear-gradient(179.29deg, #FFFFFF 1.41%, rgba(141, 141, 141, 0) 65.56%),url({{ site.theme.link }}/assets/images/slide.jpg) 0 100%;">
 	<div class="container">
 		<div class="main-banner-title">Мы готовим <span>профессионалов</span></div>
 		<div class="main-banner-text">
@@ -13,7 +13,7 @@
 	<div class="container">
 		<div class="trainings_block-inner">
 			{% for item in 0..2 %}
-				<div class="training-item" style="background: linear-gradient(360deg, #000000 -21.92%, rgba(179, 179, 179, 0) 48.24%), url(./assets/images/tren.jpg);">
+				<div class="training-item" style="background: linear-gradient(360deg, #000000 -21.92%, rgba(179, 179, 179, 0) 48.24%), url({{ site.theme.link }}/assets/images/tren.jpg);">
 					<div class="training-item-name">Тренинги</div>
 					<div class="training-item-link"><a href="">Узнать подробне</a></div>
 				</div>
@@ -27,7 +27,7 @@
 		<div class="food-safety-inner">
 			{% for item in 0..2 %}
 				<div class="food-safety-item">
-					<div class="food-safety-item-image"><img src="./assets/images/food.jpg" alt=""></div>
+					<div class="food-safety-item-image"><img src="{{ site.theme.link }}/assets/images/food.jpg" alt=""></div>
 					<div class="food-safety-content">
 						<div class="food-safety-name">ХАССП как конкурентное преимущество</div>
 						<hr class="safety-decore">
@@ -61,7 +61,7 @@
 			{% for item in 0..3 %}
 				<a href="" class="teacher-item">
 					<div class="teacher-item-photo">
-						<img src="./assets/images/teacher.jpg" alt="">
+						<img src="{{ site.theme.link }}/assets/images/teacher.jpg" alt="">
 					</div>
 					<div class="teacher-item-name">Шишкевич Злата</div>
 					<div class="teacher-item-text">
