@@ -42,11 +42,11 @@
 	<nav class="nav">
         <label for="nav-toggle" class="nav-toggle" onclick=""></label> 
         <ul>
-     		<li><a href="">Курсы</a></li>
-     		<li><a href="">Об Университете</a></li>
-     		<li><a href="">Преподаватели</a></li>
-     		<li><a href="">Отзывы</a></li>
-     		<li><a href="">Контакты</a></li>
+			{% for item in menu_header.get_items %}
+                <li itemprop="name" class="{{item.class}} top-nav__item">
+                    <a class="link" itemprop="url" href="{{ item.link }}">{{ item.title }}</a>
+                </li>
+            {% endfor %} 
      	</ul>
      	<div class="menu-email"><a href="">U@rosinter.ru</a></div>
      	<div class="menu-address">Москва, ул. Душинская, д. 7, стр. 1</div>
@@ -73,11 +73,11 @@
 			</div>
 			<div class="main-header-menu">
 				<ul>
-					<li><a href="">Курсы</a></li>
-					<li><a href="">Об Университете</a></li>
-					<li><a href="">Преподаватели</a></li>
-					<li><a href="">Отзывы</a></li>
-					<li><a href="">Контакты</a></li>
+					{% for item in menu_header.get_items %}
+                        <li itemprop="name" class="{{item.class}} top-nav__item">
+                            <a class="link" itemprop="url" href="{{ item.link }}">{{ item.title }}</a>
+                        </li>
+                    {% endfor %} 
 				</ul>
 			</div>
 		</div>

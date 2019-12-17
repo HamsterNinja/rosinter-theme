@@ -1,0 +1,41 @@
+{% include "partials/header.twig" %}
+<main class='main-content'>
+	<div class="reviews_page-content top_padding">
+		<div class="container">
+			<div class="header-title">
+				<div class="all-page-title"><h1>Отзывы</h1></div>
+				<div class="review-add"><a href="">Оставить отзыв</a></div>
+			</div>
+			<div class="reviews-inner">
+				{% if posts is not empty  %}
+					{% for post in posts %}
+						<div class="review-item">
+							<div class="review-item-img">
+								{% if post.thumbnail %}
+									<picture>
+										<source srcset="{{ post.thumbnail.src('medium_large')|towebp }}" type="image/webp">
+										<source srcset="{{ post.thumbnail.src('medium_large')|tojpg }}" type="image/jpeg">
+										<img src="{{ post.thumbnail.src('medium_large')|tojpg }}" alt="{{ post.title }}">
+									</picture>
+								{% else %}
+									<img class="" src="{{ site.theme.link }}/assets/images/placeholder-images.webp" alt="">
+								{% endif %}
+							</div>
+							<div class="review-item-name">{{ post.title }}</div>
+							<div class="review-item-job">Директор</div>
+							<div class="review-item-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ultricies imperdiet sapien, non interdum quam accumsan vitae. Donec condimentum lorem ut lorem scelerisque, at molestie massa suscipit.</div>
+						</div>
+					{% endfor %}
+				{% else %}
+					<div class="not-content">
+						Категория пуста
+					</div>
+				{% endif %}
+			</div>
+			{% if posts is not empty  %}
+                {% include 'partials/pagination.twig' with { pagination: posts.pagination({show_all: false, mid_size: 3, end_size: 2}) } %}
+            {% endif %}
+		</div>
+	</div>
+</main>
+{% include "partials/footer.twig" %}

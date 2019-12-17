@@ -1,0 +1,9 @@
+{% include "partials/header.twig" %}
+<main class='main-content'>
+<div class="single-content">
+	<div class="container">
+        {{ post.get_content|shortcodes }} 
+	</div>
+</div>
+</main>
+{% include "partials/footer.twig" %}

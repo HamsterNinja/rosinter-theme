@@ -1,12 +1,24 @@
 {% include "partials/header.twig" %}
-<main class='main-content' id="app">
+<main class='main-content'>
 <div class="teachers_page top_padding">
 	<div class="container">
-		<div class="all-page-title"><h1>Эксперт по пищевой безопастности</h1></div>
+		<div class="all-page-title">
+			<h1>Эксперт по пищевой безопастности</h1>
+		</div>
 		<div class="hassp-teacher-item">
-			<div class="hassp-teacher-item-img"><img src="./assets/images/teach.jpg" alt=""></div>
+			<div class="hassp-teacher-item-img">
+				{% if post.thumbnail %}
+					<picture>
+						<source srcset="{{ post.thumbnail.src('medium_large')|towebp }}" type="image/webp">
+						<source srcset="{{ post.thumbnail.src('medium_large')|tojpg }}" type="image/jpeg">
+						<img src="{{ post.thumbnail.src('medium_large')|tojpg }}" alt="{{ post.title }}">
+					</picture>
+				{% else %}
+					<img class="" src="{{ site.theme.link }}/assets/images/placeholder-images.webp" alt="">
+				{% endif %}
+			</div>
 			<div class="hassp-teacher-item-info">
-				<div class="hassp-teacher-item-name">Ольга Заваловская</div>
+				<div class="hassp-teacher-item-name">{{ post.title }}</div>
 				<div class="hassp-teacher-item-text">
 					<p>старший менеджер по качеству департамента закупок и логистики ООО «Росинтер Ресторантс».</p>
 				</div>
@@ -14,16 +26,12 @@
 		</div>
 		<div class="teachers_page-content">
 			<div class="hasp-teatcher-text">
-				<p>С 2016 года работает в компании «Росинтер Ресторантс». Занимается внедрением системы менеджмента безопасности пищевой продукции по международному образцу, внедрением ФГИС «Меркурий». Развивает направление GFSI среди поставщиков.</p> 
-				<p>С 01 июля 2019 года занимает пост Заместителя Коммерческого Директора по закупочным процессам.</p>
-				<p>Является аттестованным аудитором органа по сертификации NSF. Получила три награды в 2017-2018 году от NSF по внедрению требований международных стандартов.</p>
-				<p>Получила награду  за лучшее выступление по теме ФГИС «Меркурий» в 2018 году  на Девятой церемонии награждения лучших спикеров CFO-Russia.ru.</p>
-				<p>Является приглашенным лектором по ХАССП и пищевой безопасности в Российском Экономическом Университете им. Г.В. Плеханова и в Российской Академии Народного Хозяйства и Государственной Службы.</p>
+				{{ post.get_content|shortcodes }} 
 			</div>
 			<div class="hasp-teacher-gallery">
-				<a href="" class="gallery-item"><img src="./assets/images/sert-1.jpg" alt=""></a>
-				<a href="" class="gallery-item"><img src="./assets/images/sert-2.jpg" alt=""></a>
-				<a href="" class="gallery-item"><img src="./assets/images/sert-3.jpg" alt=""></a>
+				<a href="" class="gallery-item"><img src="{{ site.theme.link }}/assets/images/sert-1.jpg" alt=""></a>
+				<a href="" class="gallery-item"><img src="{{ site.theme.link }}/assets/images/sert-2.jpg" alt=""></a>
+				<a href="" class="gallery-item"><img src="{{ site.theme.link }}/assets/images/sert-3.jpg" alt=""></a>
 			</div>
 			<div class="hasp-teatcher-text">
 				<p><b>Интервью:</b></p>
