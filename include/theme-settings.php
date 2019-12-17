@@ -9,6 +9,7 @@ function create_my_post_types() {
             'supports'      => array( 'title', 'editor', 'thumbnail','excerpt'),
             'has_archive' => true,
             'show_in_rest' => true,
+            'hierarchical' => true,
             'public' => true, ) );      
     register_post_type(
         'reviews',
@@ -30,3 +31,4 @@ function create_my_post_types() {
             'show_in_rest' => true,
             'public' => true, ) );              
 }
+
