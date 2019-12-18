@@ -226,7 +226,22 @@
             		</div>
             	</div>
             	<div class="webinar-modules-column">
-            		
+                    <calendar style="height: 570px;"
+                    :calendars="calendarData.calendarList"
+                    :schedules="calendarData.scheduleList"
+                    :view="calendarData.view"
+                    :taskView="calendarData.taskView"
+                    :scheduleView="calendarData.scheduleView"
+                    :theme="calendarData.theme"
+                    :week="calendarData.week"
+                    :month="calendarData.month"
+                    :timezones="calendarData.timezones"
+                    :disableDblClick="calendarData.disableDblClick"
+                    :isReadOnly="calendarData.isReadOnly"
+                    :template="calendarData.template"
+                    :useCreationPopup="calendarData.useCreationPopup"
+                    :useDetailPopup="calendarData.useDetailPopup"
+                    />
             	</div>
             </div>
         </div>

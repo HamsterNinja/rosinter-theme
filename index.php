@@ -13,6 +13,7 @@ if ( is_home() ) {
 	$args = [
 		'post_type' => 'courses',
 		'posts_per_page' => 3,
+		'post_parent' => 0
 	];
 	$context['courses'] = Timber::get_posts( $args );
 
