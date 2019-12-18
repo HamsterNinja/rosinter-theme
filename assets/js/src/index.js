@@ -1,3 +1,9 @@
+import contactsMap from './contacts-map';
+
+document.addEventListener('DOMContentLoaded', () => {
+    contactsMap.init();
+});
+
 $('.main-slick').slick({
     slidesToShow: 1,
     autoplay: false,

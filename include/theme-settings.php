@@ -10,7 +10,8 @@ function create_my_post_types() {
             'has_archive' => true,
             'show_in_rest' => true,
             'hierarchical' => true,
-            'public' => true, ) );      
+            'public' => true, ) );   
+               
     register_post_type(
         'reviews',
          array(

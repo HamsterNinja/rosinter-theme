@@ -25,11 +25,21 @@
 	<div class="container">
 		<div class="main-page-title">Безопасность пищи</div>
 		<div class="food-safety-inner">
-			{% for item in 0..2 %}
+			{% for course in courses %}
 				<div class="food-safety-item">
-					<div class="food-safety-item-image"><img src="{{ site.theme.link }}/assets/images/food.jpg" alt=""></div>
+					<div class="food-safety-item-image">
+						{% if course.thumbnail %}
+							<picture>
+								<source srcset="{{ course.thumbnail.src('medium_large')|towebp }}" type="image/webp">
+								<source srcset="{{ course.thumbnail.src('medium_large')|tojpg }}" type="image/jpeg">
+								<img src="{{ course.thumbnail.src('medium_large')|tojpg }}" alt="{{ course.title }}">
+							</picture>
+						{% else %}
+							<img class="" src="{{ site.theme.link }}/assets/images/placeholder-images.webp" alt="">
+						{% endif %}
+					</div>
 					<div class="food-safety-content">
-						<div class="food-safety-name">ХАССП как конкурентное преимущество</div>
+						<div class="food-safety-name">{{ course.title }}</div>
 						<hr class="safety-decore">
 						<div class="food-safety-time">
 							<div class="food-safety-time-name">Очно (2 дня 16 часов)</div>
@@ -45,7 +55,7 @@
 						</div>
 						<div class="food-safety-links">
 							<a class="link-sign" href="">Записаться</a>
-							<a class="view-more" href="">Узнать больше</a>
+							<a class="view-more" href="{{ course.link }}">Узнать больше</a>
 						</div>
 					</div>
 					<div class="food-safety-difficult">Начинающий</div>
@@ -58,12 +68,20 @@
 	<div class="container">
 		<div class="main-page-title">Преподаватели</div>
 		<div class="teachers_block-inner">
-			{% for item in 0..3 %}
-				<a href="" class="teacher-item">
+			{% for teacher in teachers %}
+				<a href="{{ teacher.link }}" class="teacher-item">
 					<div class="teacher-item-photo">
-						<img src="{{ site.theme.link }}/assets/images/teacher.jpg" alt="">
+						{% if teacher.thumbnail %}
+							<picture>
+								<source srcset="{{ teacher.thumbnail.src('medium_large')|towebp }}" type="image/webp">
+								<source srcset="{{ teacher.thumbnail.src('medium_large')|tojpg }}" type="image/jpeg">
+								<img src="{{ teacher.thumbnail.src('medium_large')|tojpg }}" alt="{{ teacher.title }}">
+							</picture>
+						{% else %}
+							<img class="" src="{{ site.theme.link }}/assets/images/placeholder-images.webp" alt="">
+						{% endif %}
 					</div>
-					<div class="teacher-item-name">Шишкевич Злата</div>
+					<div class="teacher-item-name">{{ teacher.title }}</div>
 					<div class="teacher-item-text">
 						<p>Региональный менеджер по персоналу</p>
 						<p>Преподаватель Университета Росинтер</p>

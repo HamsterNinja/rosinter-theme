@@ -3,6 +3,19 @@ $context = Timber::get_context();
 $templates = ['index.twig'];
 if ( is_home() ) {    
 	array_unshift( $templates, 'home.twig' );
+
+	$args = [
+		'post_type' => 'teachers',
+		'posts_per_page' => 4,
+	];
+	$context['teachers'] = Timber::get_posts( $args );
+
+	$args = [
+		'post_type' => 'courses',
+		'posts_per_page' => 3,
+	];
+	$context['courses'] = Timber::get_posts( $args );
+
 	Timber::render( $templates, $context );
 }
 else{
