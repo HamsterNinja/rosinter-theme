@@ -4,9 +4,12 @@ function create_my_post_types() {
     register_post_type(
         'courses',
          array(
-            'labels' => array( 'name' => __( 'Курсы' ),
-            'singular_name' => __( 'Курс' ) ),
-            'supports'      => array( 'title', 'editor', 'thumbnail','excerpt'),
+            'labels' => [
+                'name' => __( 'Курсы' ),
+                'singular_name' => __( 'Курс' ),
+                'parent_item_colon' => ''
+            ],
+            'supports'      => array( 'title', 'editor', 'thumbnail','excerpt', 'page-attributes'),
             'has_archive' => true,
             'show_in_rest' => true,
             'hierarchical' => true,
