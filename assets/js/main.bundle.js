@@ -9461,6 +9461,9 @@ if (elVueQuery) {
       'calendar': __WEBPACK_IMPORTED_MODULE_3__toast_ui_vue_calendar__["Calendar"]
     },
     data: {
+      webinar: {
+        price: ''
+      },
       calendarData: {
         calendarList: [],
         scheduleList: [{
@@ -9519,7 +9522,12 @@ if (elVueQuery) {
     },
     watch: {},
     computed: {},
-    mounted: function mounted() {},
+    mounted: function mounted() {
+      var indexFirstRef = Object.keys(this.$refs).find(function (ref) {
+        return ref.includes('module');
+      });
+      this.setPrice(this.$refs[indexFirstRef].getAttribute('data-price'), indexFirstRef);
+    },
     methods: {
       showModal: function showModal(modalName) {
         var currentModal = document.querySelector(".".concat(modalName));
@@ -9537,6 +9545,11 @@ if (elVueQuery) {
           modal.classList.remove('modal--show');
           overlay.classList.remove('overlay--show');
         });
+      },
+      setPrice: function setPrice(price, ref) {
+        this.webinar.price = price;
+        console.log(ref);
+        this.$refs[ref].classList.toggle('active');
       }
     }
   });

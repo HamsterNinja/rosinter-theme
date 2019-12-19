@@ -3157,11 +3157,15 @@ input.fulltimeSubmit {
   color: #0c143b;
   width: calc(100% - 205px);
 }
-.webinar-title.active {
+.webinar-item.active .webinar-title {
   color: #fe334a;
+}
+.webinar-item.active .webinar-content-inner {
+  display: block;
 }
 .webinar-content-inner {
   padding-top: 40px;
+  display: none;
 }
 .webinar-content-column {
   display: inline-block;

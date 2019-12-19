@@ -15,6 +15,7 @@ $('.main-slick').slick({
     dots: true,
     swipeToSlide: true,
 });
+
 $('.projects-slick').slick({
     slidesToShow: 1,
     centerMode: true,
@@ -58,6 +59,9 @@ if (elVueQuery) {
             'calendar': Calendar
         },
         data: {
+            webinar: {
+                price: ''
+            },
             calendarData: {
                 calendarList: [],
                 scheduleList: [
@@ -122,7 +126,12 @@ if (elVueQuery) {
         },
         watch: {},
         computed: {},
-        mounted() {},
+        mounted() {
+            let indexFirstRef = Object.keys(this.$refs).find(function(ref) {
+                return ref.includes('module');
+            });
+            this.setPrice(this.$refs[indexFirstRef].getAttribute('data-price'), indexFirstRef);
+        },
         methods: {
             showModal: (modalName) => {
                 const currentModal = document.querySelector(`.${modalName}`);
@@ -141,6 +150,12 @@ if (elVueQuery) {
                     overlay.classList.remove('overlay--show');
                 });
             },
+
+            setPrice(price, ref){
+                this.webinar.price = price;
+                console.log(ref);
+                this.$refs[ref].classList.toggle('active');
+            }
         },
     })
 };

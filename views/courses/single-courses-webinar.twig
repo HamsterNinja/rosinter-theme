@@ -18,11 +18,11 @@
             </div>
             <div class="webinar-inner">
                 {% for module in modules %}
-                    <div class="webinar-item">
+                    <div ref='module_{{ loop.index }}' class="webinar-item" data-price='{{ module.price }}'>
                         <div class="webinar-header">
-                            <div class="webinar-title active">{{ module.title }}</div>
+                            <div class="webinar-title">{{ module.title }}</div>
                             <div class="webinar-link">
-                                <a href="">Выбрать</a>
+                                <a href="#" @click.prevent="setPrice({{ module.price }}, 'module_{{ loop.index }}')">Выбрать</a>
                             </div>
                         </div>
                         <div class="webinar-content-inner">
@@ -45,7 +45,7 @@
             		<div class="webinar-modules-info-top">
             			<div class="webinar-modules-info-column">
             				<div class="module-price-text">Стоимость модуля:</div>
-            				<div class="module-price-value">6 000 р.</div>
+            				<div class="module-price-value">(( webinar.price )) р.</div>
             			</div>
             			<div class="webinar-modules-info-column blue">
             				<div class="module-button"><a href="">ЗАПИСАТЬСЯ</a></div>
