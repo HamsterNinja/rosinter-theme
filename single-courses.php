@@ -11,6 +11,9 @@ $parent_page = get_post($parent_page_id);
 $parent_page_name = $parent_page->post_name;
 
 
+$modules = get_field('modules', $parent_page_id); 
+$context['modules'] = $modules;
+
 if ($parent_page_name !== $page_name) {
     if (strpos($page_name, 'fulltime') !== false) {
         array_unshift( $templates, 'courses/single-courses-fulltime.twig' );
