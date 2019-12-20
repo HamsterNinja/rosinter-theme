@@ -1,0 +1,15 @@
+<div class="overlay" v-on:click="closeModal"></div>
+
+<div class="dialogs">
+
+    <div class="modal-window modal-window--login" role="dialog" aria-modal="true">
+        <div class="modal-window-container">
+            <button class="modal-window__close" v-on:click="closeModal"></button>
+            <div class="modal-window__content">
+                {{ function('do_shortcode', '[TheChamp-Login]') }}
+                <!-- <login-modal></login-modal> -->
+            </div>
+        </div>
+    </div>
+
+</div>

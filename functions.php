@@ -119,7 +119,9 @@ class StarterSite extends TimberSite {
     function add_to_context( $context ) {
         $context['menu_header'] = new TimberMenu('menu_header');  
         $context['site'] = $this;
-    
+        $context['user_login'] = get_the_author_meta( 'user_login', wp_get_current_user()->ID );
+        $context['is_user_logged_in'] = is_user_logged_in();
+        
 		return $context;
 	}
 }
