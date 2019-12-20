@@ -3268,6 +3268,49 @@ input.fulltimeSubmit {
   padding: 5.5px 10px;
   display: inline-block;
 }
+.profile-container__user {
+  padding-top: 43px;
+  display: flex;
+}
+.profile-container__avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  border: 4px solid #fff;
+  margin-left: -4px;
+  box-sizing: content-box;
+}
+.profile-container__details {
+  margin-left: 40px;
+  flex: 1;
+}
+.profile-container__name {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.33;
+  letter-spacing: 1.5px;
+  padding-top: 14px;
+  padding-bottom: 27px;
+}
+.profile-container__email {
+  padding-bottom: 20px;
+}
+.profile-container__email, .profile-container__phone {
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.profile-container__personal-data {
+  padding: 38px 49px;
+  background: #e9e9ea;
+  max-width: 515px;
+}
+.profile-container__email img {
+  margin-right: 10px;
+}
 .overlay.overlay--show {
   display: block;
   -webkit-animation: showModal 250ms ease-in-out;

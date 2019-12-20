@@ -1,0 +1,28 @@
+{% include "partials/header.twig" %}
+<main class='main-content'>
+    <div class="online_page-content top_padding">
+        <div class="container">
+            <div class="hassp-title">Персональные данные</div>
+            <div class="content">
+                {{ post.get_content|shortcodes }}
+                <div class="profile-container">
+                    <div class="profile-container__personal-data">
+                        <div class="profile-container__user">
+                            <img src="" alt="" class="profile-container__avatar">
+                            <div class="profile-container__details">
+                                <div class="profile-container__name">
+                                    Андрей Ерошкин
+                                </div>
+                                <div class="profile-container__email">
+                                    <img src="{{ site.theme.link }}/assets/images/mail.svg" width="20" height="16">
+                                    andreroshkin@gmail.com
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% include "partials/footer.twig" %}
