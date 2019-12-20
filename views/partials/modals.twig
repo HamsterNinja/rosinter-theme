@@ -7,9 +7,29 @@
             <button class="modal-window__close" v-on:click="closeModal"></button>
             <div class="modal-window__content">
                 {{ function('do_shortcode', '[TheChamp-Login]') }}
-                <!-- <login-modal></login-modal> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-window modal-window--new-review" role="dialog" aria-modal="true">
+        <div class="modal-window-container">
+            <button class="modal-window__close" v-on:click="closeModal"></button>
+            <div class="modal-window__content">
+                <form id="new_reviews" name="new_reviews" method="POST" action="" class="reviews-form" enctype="multipart/form-data">
+                    <input id="title" type="text" name="title" placeholder="Ваше имя" value="" required>
+                    <label class="file_upload" for="file_upload">
+                        <button type="button">Фотография</button>
+                        <input id="file_upload" name="file" type="file">
+                    </label>
+                    <textarea id="description" name="description" id="" placeholder="Напишите отзыв" required></textarea>
+                    <button id="button-submit" type="submit" class="button button--red" id="submit" name="submit">Оставить отзыв</button>
+                    <input type="hidden" name="action" value="new_reviews" />
+                </form>
             </div>
         </div>
     </div>
 
 </div>
+
+
+

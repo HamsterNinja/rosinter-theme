@@ -4,7 +4,9 @@
 		<div class="container">
 			<div class="header-title">
 				<div class="all-page-title"><h1>Отзывы</h1></div>
-				<div class="review-add"><a href="">Оставить отзыв</a></div>
+				<div class="review-add">
+					<a href="#" v-on:click.prevent="showModal('modal-window--new-review')">Оставить отзыв</a>
+				</div>
 			</div>
 			<div class="reviews-inner">
 				{% if posts is not empty  %}
