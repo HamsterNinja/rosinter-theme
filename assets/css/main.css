@@ -3307,6 +3307,7 @@ input.fulltimeSubmit {
   padding: 38px 49px;
   background: #e9e9ea;
   max-width: 515px;
+  margin-bottom: 20px;
 }
 .profile-container__email img {
   margin-right: 10px;
