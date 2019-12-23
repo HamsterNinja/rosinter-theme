@@ -26325,10 +26325,13 @@ if (elVueQuery) {
       var indexFirstRef = Object.keys(this.$refs).find(function (ref) {
         return ref.includes('module');
       });
-      var price = this.$refs[indexFirstRef].getAttribute('data-price');
-      var name_module = this.$refs[indexFirstRef].getAttribute('data-name_module');
-      var link_module = this.$refs[indexFirstRef].getAttribute('data-link_module');
-      this.setPrice(price, name_module, link_module, indexFirstRef);
+
+      if (this.$refs[indexFirstRef]) {
+        var price = this.$refs[indexFirstRef].getAttribute('data-price');
+        var name_module = this.$refs[indexFirstRef].getAttribute('data-name_module');
+        var link_module = this.$refs[indexFirstRef].getAttribute('data-link_module');
+        this.setPrice(price, name_module, link_module, indexFirstRef);
+      }
     },
     methods: {
       showModal: function showModal(modalName) {
@@ -26416,38 +26419,40 @@ if (elVueQuery) {
         this.setRenderRangeText();
       },
       setRenderRangeText: function setRenderRangeText() {
-        var invoke = this.$refs.tuiCalendar.invoke;
-        var view = invoke('getViewName');
-        var calDate = invoke('getDate');
-        var rangeStart = invoke('getDateRangeStart');
-        var rangeEnd = invoke('getDateRangeEnd');
-        var year = calDate.getFullYear();
-        var month = calDate.getMonth() + 1;
-        var date = calDate.getDate();
-        var dateRangeText = '';
-        var endMonth, endDate, start, end;
+        if (this.$refs.tuiCalendar) {
+          var invoke = this.$refs.tuiCalendar.invoke;
+          var view = invoke('getViewName');
+          var calDate = invoke('getDate');
+          var rangeStart = invoke('getDateRangeStart');
+          var rangeEnd = invoke('getDateRangeEnd');
+          var year = calDate.getFullYear();
+          var month = calDate.getMonth() + 1;
+          var date = calDate.getDate();
+          var dateRangeText = '';
+          var endMonth, endDate, start, end;
 
-        switch (view) {
-          case 'month':
-            dateRangeText = "".concat(year, "-").concat(month);
-            break;
+          switch (view) {
+            case 'month':
+              dateRangeText = "".concat(year, "-").concat(month);
+              break;
 
-          case 'week':
-            year = rangeStart.getFullYear();
-            month = rangeStart.getMonth() + 1;
-            date = rangeStart.getDate();
-            endMonth = rangeEnd.getMonth() + 1;
-            endDate = rangeEnd.getDate();
-            start = "".concat(year, "-").concat(month, "-").concat(date);
-            end = "".concat(endMonth, "-").concat(endDate);
-            dateRangeText = "".concat(start, " ~ ").concat(end);
-            break;
+            case 'week':
+              year = rangeStart.getFullYear();
+              month = rangeStart.getMonth() + 1;
+              date = rangeStart.getDate();
+              endMonth = rangeEnd.getMonth() + 1;
+              endDate = rangeEnd.getDate();
+              start = "".concat(year, "-").concat(month, "-").concat(date);
+              end = "".concat(endMonth, "-").concat(endDate);
+              dateRangeText = "".concat(start, " ~ ").concat(end);
+              break;
 
-          default:
-            dateRangeText = "".concat(year, "-").concat(month, "-").concat(date);
+            default:
+              dateRangeText = "".concat(year, "-").concat(month, "-").concat(date);
+          }
+
+          this.dateRange = moment(dateRangeText).format('MMMM YYYY');
         }
-
-        this.dateRange = moment(dateRangeText).format('MMMM YYYY');
       }
     }
   });

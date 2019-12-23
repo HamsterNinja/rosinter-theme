@@ -119,10 +119,13 @@ if (elVueQuery) {
             let indexFirstRef = Object.keys(this.$refs).find(function(ref) {
                 return ref.includes('module');
             });
-            let price = this.$refs[indexFirstRef].getAttribute('data-price');
-            let name_module = this.$refs[indexFirstRef].getAttribute('data-name_module');
-            let link_module = this.$refs[indexFirstRef].getAttribute('data-link_module');
-            this.setPrice(price, name_module, link_module, indexFirstRef);
+
+            if(this.$refs[indexFirstRef]){
+                let price = this.$refs[indexFirstRef].getAttribute('data-price');
+                let name_module = this.$refs[indexFirstRef].getAttribute('data-name_module');
+                let link_module = this.$refs[indexFirstRef].getAttribute('data-link_module');
+                this.setPrice(price, name_module, link_module, indexFirstRef);
+            }
         },
         methods: {
             showModal: (modalName) => {
@@ -199,34 +202,37 @@ if (elVueQuery) {
             },
 
             setRenderRangeText() {
-                const {invoke} = this.$refs.tuiCalendar;
-                const view = invoke('getViewName');
-                const calDate = invoke('getDate');
-                const rangeStart = invoke('getDateRangeStart');
-                const rangeEnd = invoke('getDateRangeEnd');
-                let year = calDate.getFullYear();
-                let month = calDate.getMonth() + 1;
-                let date = calDate.getDate();
-                let dateRangeText = '';
-                let endMonth, endDate, start, end;
-                switch (view) {
-                  case 'month':
-                    dateRangeText = `${year}-${month}`;
-                    break;
-                  case 'week':
-                    year = rangeStart.getFullYear();
-                    month = rangeStart.getMonth() + 1;
-                    date = rangeStart.getDate();
-                    endMonth = rangeEnd.getMonth() + 1;
-                    endDate = rangeEnd.getDate();
-                    start = `${year}-${month}-${date}`;
-                    end = `${endMonth}-${endDate}`;
-                    dateRangeText = `${start} ~ ${end}`;
-                    break;
-                  default:
-                    dateRangeText = `${year}-${month}-${date}`;
+                if(this.$refs.tuiCalendar){
+                    const {invoke} = this.$refs.tuiCalendar;
+                    const view = invoke('getViewName');
+                    const calDate = invoke('getDate');
+                    const rangeStart = invoke('getDateRangeStart');
+                    const rangeEnd = invoke('getDateRangeEnd');
+                    let year = calDate.getFullYear();
+                    let month = calDate.getMonth() + 1;
+                    let date = calDate.getDate();
+                    let dateRangeText = '';
+                    let endMonth, endDate, start, end;
+                    switch (view) {
+                    case 'month':
+                        dateRangeText = `${year}-${month}`;
+                        break;
+                    case 'week':
+                        year = rangeStart.getFullYear();
+                        month = rangeStart.getMonth() + 1;
+                        date = rangeStart.getDate();
+                        endMonth = rangeEnd.getMonth() + 1;
+                        endDate = rangeEnd.getDate();
+                        start = `${year}-${month}-${date}`;
+                        end = `${endMonth}-${endDate}`;
+                        dateRangeText = `${start} ~ ${end}`;
+                        break;
+                    default:
+                        dateRangeText = `${year}-${month}-${date}`;
+                    }
+                    this.dateRange = moment(dateRangeText).format('MMMM YYYY');
                 }
-                this.dateRange = moment(dateRangeText).format('MMMM YYYY');
+
             },
 
         },
