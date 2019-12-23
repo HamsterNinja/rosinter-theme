@@ -78,10 +78,18 @@ function add_scripts() {
     time_enqueuer('app', '/assets/js/main.bundle.js', 'script', true);
     wp_enqueue_script('yandex-map-api', 'https://api-maps.yandex.ru/2.1/?lang=ru_RU&load=Map,Placemark#asyncload'); 
 
+    $post = get_post();
+    $parent_page_id = $post->post_parent;
+    $page_name = $post->post_name;
+    $parent_page = get_post($parent_page_id);
+    $parent_page_name = $parent_page->post_name;
+    $modules = get_field('modules', $parent_page_id);
+
     wp_localize_script( 'app', 'SITEDATA', array(
         'url' => get_site_url(),
         'themepath' => get_template_directory_uri(),
         'ajax_url' => admin_url('admin-ajax.php'),
+        'modules' => $modules,
     ));
 }
 

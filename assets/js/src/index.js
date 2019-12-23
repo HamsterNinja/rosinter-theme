@@ -133,6 +133,23 @@ if (elVueQuery) {
         watch: {},
         computed: {},
         mounted() {
+            let course_modules = SITEDATA.modules;
+            let new_course_modules = [];
+            course_modules.forEach(
+                (course_module, index) => { 
+                    let new_course_module = {
+                        id: index,
+                        title: course_module.title,
+                        category: 'time',
+                        dueDateClass: '',
+                        start: course_module.time_start,
+                        end: course_module.time_end
+                    };
+                    new_course_modules.push(new_course_module);
+                }
+            );
+            this.calendarData.scheduleList = new_course_modules;
+
             let indexFirstRef = Object.keys(this.$refs).find(function(ref) {
                 return ref.includes('module');
             });
