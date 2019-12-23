@@ -1435,7 +1435,9 @@ button#button-submit {
 .webinar-modules-column {
     position: relative;
 }
-
+.webinar-modules-column:first-child {
+    margin-top: 48px;
+}
 .render-range {
     font-weight: bold;
     font-size: 24px;

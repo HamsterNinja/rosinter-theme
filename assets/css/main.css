@@ -863,9 +863,15 @@ textarea {
 .tui-full-calendar-month-dayname-item {
   height: 100%;
   font-weight: bold;
+  line-height: 17px !important;
+  text-align: left;
+}
+.tui-view-6 {
+  height: 17px !important;
 }
 .tui-full-calendar-month-week-item {
   position: relative;
+  height: 66px !important;
 }
 .tui-full-calendar-month-week-item > div {
   height: 100%;
@@ -1400,6 +1406,7 @@ input[type='checkbox'].tui-full-calendar-checkbox-round + span {
 .tui-full-calendar-popup-detail .tui-full-calendar-section-button {
   border-top: 1px solid #e5e5e5;
   font-size: 0;
+  display: none;
 }
 .tui-full-calendar-section-button .tui-full-calendar-icon {
   margin-right: 4px;
@@ -3385,6 +3392,9 @@ button#button-submit {
 }
 .webinar-modules-column {
   position: relative;
+}
+.webinar-modules-column:first-child {
+  margin-top: 48px;
 }
 .render-range {
   font-weight: bold;
