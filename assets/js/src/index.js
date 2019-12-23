@@ -172,6 +172,15 @@ if (elVueQuery) {
                 );
 
                 this.$refs[ref].classList.toggle('active');
+
+                let targetScroll = event.target.parentNode.parentNode;
+                if(targetScroll){
+                    targetScroll.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start',
+                        inline: "nearest"
+                    })
+                }
             },
             
             async submitModuleForm(){

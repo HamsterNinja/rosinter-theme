@@ -9564,6 +9564,15 @@ if (elVueQuery) {
           ref.classList.remove('active');
         });
         this.$refs[ref].classList.toggle('active');
+        var targetScroll = event.target.parentNode.parentNode;
+
+        if (targetScroll) {
+          targetScroll.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: "nearest"
+          });
+        }
       },
       submitModuleForm: function submitModuleForm() {
         var formReg, fetchData, sendURL, response, responseData;
