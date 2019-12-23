@@ -12,10 +12,12 @@
 <div class="trainings_block">
 	<div class="container">
 		<div class="trainings_block-inner">
-			{% for item in 0..2 %}
-				<div class="training-item" style="background: linear-gradient(360deg, #000000 -21.92%, rgba(179, 179, 179, 0) 48.24%), url({{ site.theme.link }}/assets/images/tren.jpg);">
-					<div class="training-item-name">Тренинги</div>
-					<div class="training-item-link"><a href="">Узнать подробнее</a></div>
+			{% for news_item in news_items %}
+				<div class="training-item" style="background: linear-gradient(360deg, #000000 -21.92%, rgba(179, 179, 179, 0) 48.24%), url({{ news_item.thumbnail.src('medium_large')|tojpg }});">
+					<div class="training-item-name">{{ news_item.title }}</div>
+					<div class="training-item-link">
+						<a href="{{ news_item.link }}">Узнать подробнее</a>
+					</div>
 				</div>
 			{% endfor %}
 		</div>
