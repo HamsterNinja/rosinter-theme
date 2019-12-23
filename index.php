@@ -17,6 +17,13 @@ if ( is_home() ) {
 	];
 	$context['courses'] = Timber::get_posts( $args );
 
+	$args = [
+		'post_type' => 'post',
+		'posts_per_page' => 4,
+		'category_name' => 'news-events'
+	];
+	$context['news_items'] = Timber::get_posts( $args );
+
 	Timber::render( $templates, $context );
 }
 else{
