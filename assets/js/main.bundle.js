@@ -9462,7 +9462,13 @@ if (elVueQuery) {
     },
     data: {
       webinar: {
-        price: ''
+        price: '',
+        name_module: '',
+        link_module: ''
+      },
+      user: {
+        name: '',
+        phone: ''
       },
       calendarData: {
         calendarList: [],
@@ -9526,7 +9532,10 @@ if (elVueQuery) {
       var indexFirstRef = Object.keys(this.$refs).find(function (ref) {
         return ref.includes('module');
       });
-      this.setPrice(this.$refs[indexFirstRef].getAttribute('data-price'), indexFirstRef);
+      var price = this.$refs[indexFirstRef].getAttribute('data-price');
+      var name_module = this.$refs[indexFirstRef].getAttribute('data-name_module');
+      var link_module = this.$refs[indexFirstRef].getAttribute('data-link_module');
+      this.setPrice(price, name_module, link_module, indexFirstRef);
     },
     methods: {
       showModal: function showModal(modalName) {
@@ -9546,10 +9555,55 @@ if (elVueQuery) {
           overlay.classList.remove('overlay--show');
         });
       },
-      setPrice: function setPrice(price, ref) {
+      setPrice: function setPrice(price, name_module, link_module, ref) {
         this.webinar.price = price;
-        console.log(ref);
+        this.webinar.name_module = name_module;
+        this.webinar.link_module = link_module;
+        var refsArray = Object.values(this.$refs);
+        refsArray.forEach(function (ref) {
+          ref.classList.remove('active');
+        });
         this.$refs[ref].classList.toggle('active');
+      },
+      submitModuleForm: function submitModuleForm() {
+        var formReg, fetchData, sendURL, response, responseData;
+        return regeneratorRuntime.async(function submitModuleForm$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                formReg = new FormData();
+                formReg.append("name", this.user.name);
+                formReg.append("phone", this.user.phone);
+                formReg.append("price", this.webinar.price);
+                formReg.append("name_module", this.webinar.name_module);
+                fetchData = {
+                  method: "POST",
+                  body: formReg
+                };
+                sendURL = "".concat(SITEDATA.themepath, "/email-send.php");
+                _context.next = 9;
+                return regeneratorRuntime.awrap(fetch(sendURL, fetchData));
+
+              case 9:
+                response = _context.sent;
+                _context.next = 12;
+                return regeneratorRuntime.awrap(response.json());
+
+              case 12:
+                responseData = _context.sent;
+
+                if (responseData.status == 'success') {
+                  this.showModal('modal-window--thank');
+                } else {
+                  this.showModal('modal-window--error');
+                }
+
+              case 14:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, null, this);
       }
     }
   });

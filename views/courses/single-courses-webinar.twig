@@ -18,11 +18,11 @@
             </div>
             <div class="webinar-inner">
                 {% for module in modules %}
-                    <div ref='module_{{ loop.index }}' class="webinar-item" data-price='{{ module.price }}'>
+                    <div ref='module_{{ loop.index }}' class="webinar-item" data-price='{{ module.price }}' data-name_module='{{ module.title }}' data-link_module='{{ module.link_module }}'>
                         <div class="webinar-header">
                             <div class="webinar-title">{{ module.title }}</div>
                             <div class="webinar-link">
-                                <a href="#" @click.prevent="setPrice({{ module.price }}, 'module_{{ loop.index }}')">Выбрать</a>
+                                <a href="#" @click.prevent="setPrice({{ module.price }}, '{{ module.title }}', '{{ module.link_module }}', 'module_{{ loop.index }}')">Выбрать</a>
                             </div>
                         </div>
                         <div class="webinar-content-inner">
@@ -48,19 +48,22 @@
             				<div class="module-price-value">(( webinar.price )) р.</div>
             			</div>
             			<div class="webinar-modules-info-column blue">
-            				<div class="module-button"><a href="">ЗАПИСАТЬСЯ</a></div>
+            				<div class="module-button">
+                                <a v-if="webinar.link_module" :href="webinar.link_module" target="_blank" rel="noopener">ЗАПИСАТЬСЯ</a>
+                            </div>
             			</div>
             		</div>
             		<div class="webinar-modules-info-bottom">
             			<div class="module-form-name">У вас есть вопросы?</div>
             			<div class="module-form">
-            				<form action="">
-            					<input class="modulesInput" type="text" placeholder="Ваше имя">
-            					<input class="modulesInput" type="phone" placeholder="+7 ( ___ ) ___ - __ - __">
+            				<form action="" v-on:submit.prevent="submitModuleForm">
+            					<input v-model="user.name" class="modulesInput" type="text" placeholder="Ваше имя" required>
+            					<input v-model="user.phone" class="modulesInput" type="phone" placeholder="+7 ( ___ ) ___ - __ - __" required>
             					<input class="modulesSubmit" type="submit" value="ОСТАВИТЬ ЗАЯВКУ">
             					<label class="control control-checkbox">
-        							Я согласен на <a href="">обработку персональных данных.</a>
-            						<input type="checkbox" checked="checked" />
+                                    Я согласен на 
+                                    <a href="">обработку персональных данных.</a>
+            						<input type="checkbox" checked="checked" required/>
         							<div class="control_indicator"></div>
     							</label>
             				</form>

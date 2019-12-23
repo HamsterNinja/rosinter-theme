@@ -32,4 +32,20 @@
 </div>
 
 
+<div class="modal-window modal-window--thank" role="dialog" aria-modal="true">
+    <div class="modal-window-container">
+        <button class="modal-window__close" v-on:click="closeModal"></button>
+        <div class="modal-window__content">
+            <span class="text-thank">Спасибо за заявку</span>
+        </div>
+    </div>
+</div>
 
+<div class="modal-window modal-window--error" role="dialog" aria-modal="true">
+    <div class="modal-window-container">
+        <button class="modal-window__close" v-on:click="closeModal"></button>
+        <div class="modal-window__content">
+            <span class="text-thank">Ошибка при отправке</span>
+        </div>
+    </div>
+</div>

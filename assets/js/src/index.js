@@ -60,7 +60,13 @@ if (elVueQuery) {
         },
         data: {
             webinar: {
-                price: ''
+                price: '',
+                name_module: '',
+                link_module: '',
+            },
+            user: {
+                name: '',
+                phone: ''
             },
             calendarData: {
                 calendarList: [],
@@ -130,7 +136,10 @@ if (elVueQuery) {
             let indexFirstRef = Object.keys(this.$refs).find(function(ref) {
                 return ref.includes('module');
             });
-            this.setPrice(this.$refs[indexFirstRef].getAttribute('data-price'), indexFirstRef);
+            let price = this.$refs[indexFirstRef].getAttribute('data-price');
+            let name_module = this.$refs[indexFirstRef].getAttribute('data-name_module');
+            let link_module = this.$refs[indexFirstRef].getAttribute('data-link_module');
+            this.setPrice(price, name_module, link_module, indexFirstRef);
         },
         methods: {
             showModal: (modalName) => {
@@ -151,11 +160,42 @@ if (elVueQuery) {
                 });
             },
 
-            setPrice(price, ref){
+            setPrice(price, name_module, link_module, ref){
                 this.webinar.price = price;
-                console.log(ref);
+                this.webinar.name_module = name_module;
+                this.webinar.link_module = link_module;
+                let refsArray = Object.values(this.$refs);
+                refsArray.forEach(
+                    ref => {
+                        ref.classList.remove('active');
+                    }
+                );
+
                 this.$refs[ref].classList.toggle('active');
-            }
+            },
+            
+            async submitModuleForm(){
+                let formReg = new FormData(); 
+                formReg.append("name", this.user.name);
+                formReg.append("phone", this.user.phone);
+                formReg.append("price", this.webinar.price);
+                formReg.append("name_module", this.webinar.name_module);
+    
+                let fetchData = {
+                    method: "POST",
+                    body: formReg
+                };
+
+                const sendURL = `${SITEDATA.themepath}/email-send.php`;
+                let response = await fetch(sendURL, fetchData);
+                let responseData = await response.json();
+                if(responseData.status == 'success'){
+                    this.showModal('modal-window--thank')
+                }
+                else{
+                    this.showModal('modal-window--error')
+                }                
+            },
         },
     })
 };
