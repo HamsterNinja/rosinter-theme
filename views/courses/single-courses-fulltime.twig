@@ -13,15 +13,16 @@
 	<div class="container">
 		<div class="fulltime-form-content">
 			<div class="fulltime-form-text">Узнать о возможности очной консультации можно по телефону</div>
-			<form action="">
-				<input class="fulltimeInput" type="text" placeholder="Ваше имя">
-				<input class="fulltimeInput" type="phone" placeholder="+7 ( ___ ) ___ - __ - __">
-				<input class="fulltimeSubmit" type="submit" value="ОСТАВИТЬ ЗАЯВКУ">
+			<form action="" v-on:submit.prevent="submitModuleForm">
+				<input v-model="user.name" class="modulesInput" type="text" placeholder="Ваше имя" required>
+				<input v-model="user.phone" class="modulesInput" type="phone" placeholder="+7 ( ___ ) ___ - __ - __" required>
+				<input class="modulesSubmit" type="submit" value="ОСТАВИТЬ ЗАЯВКУ">
 				<label class="control control-checkbox">
-        			Я согласен на <a href="">обработку персональных данных.</a>
-            		<input type="checkbox" checked="checked" />
-        			<div class="control_indicator"></div>
-    			</label>
+					Я согласен на 
+					<a href="">обработку персональных данных.</a>
+					<input type="checkbox" checked="checked" required/>
+					<div class="control_indicator"></div>
+				</label>
 			</form>
 		</div>
 	</div>
