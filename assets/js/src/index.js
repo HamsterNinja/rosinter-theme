@@ -1,6 +1,9 @@
 import 'babel-polyfill';
 import Vue from 'vue';
 
+const moment = require('moment');
+moment.locale('ru');
+
 import contactsMap from './contacts-map';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -59,6 +62,7 @@ if (elVueQuery) {
             'calendar': Calendar
         },
         data: {
+            dateRange: '',
             webinar: {
                 price: '',
                 name_module: '',
@@ -70,26 +74,8 @@ if (elVueQuery) {
             },
             calendarData: {
                 calendarList: [],
-                scheduleList: [
-                    {
-                        id: '1',
-                        title: 'Модуль 1',
-                        category: 'time',
-                        dueDateClass: '',
-                        start: '2019-12-26T17:30:00+09:00',
-                        end: '2019-12-26T17:31:00+09:00'
-                    },
-                    {
-                        id: '2',
-                        title: 'Модуль 2',
-                        category: 'time',
-                        dueDateClass: '',
-                        start: '2019-12-21T17:30:00+09:00',
-                        end: '2019-12-21T17:31:00+09:00'
-                    }
-                ],
+                scheduleList: [],
                 view: 'month',
-                taskView: false,
                 scheduleView: ['time'],
                 theme: {
                     'month.dayname.height': '30px',
@@ -99,40 +85,20 @@ if (elVueQuery) {
                     'week.timegridLeft.width': '100px',
                     'month.day.fontSize': '14px',
                 },
-                week: {
-                    // narrowWeekend: true,
-                    // showTimezoneCollapseButton: true,
-                    // timezonesCollapsed: false,
-                },
+                week: {},
                 month: {
-                    // daynames: ['Du', 'Lu', 'Ma', 'Mi', 'Jo', 'Vi', 'Sa'],
+                    daynames: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
                     visibleWeeksCount: 6,
-                    startDayOfWeek: 1
+                    startDayOfWeek: 1,
                 },
-                timezones: [
-                    {
-                        timezoneOffset: -420,
-                        displayLabel: 'GMT-08:00',
-                        tooltip: 'Los Angeles'
-                    }
-                ],
-                disableDblClick: true,
                 isReadOnly: true,
-                template: {
-                    milestone: function(schedule) {
-                        return `<span style="color:red;">${schedule.title}</span>`;
-                    },
-                    milestoneTitle: function() {
-                        return 'MILESTONE';
-                    },
-                },
-                useCreationPopup: false,
-                useDetailPopup: false,
             }
         },
         watch: {},
         computed: {},
         mounted() {
+            this.setRenderRangeText();
+
             let course_modules = SITEDATA.modules;
             let new_course_modules = [];
             course_modules.forEach(
@@ -222,6 +188,47 @@ if (elVueQuery) {
                     this.showModal('modal-window--error')
                 }                
             },
+
+            prevCalendar(){
+                this.$refs.tuiCalendar.invoke('prev');
+                this.setRenderRangeText();
+            },
+            nextCalendar(){
+                this.$refs.tuiCalendar.invoke('next');  
+                this.setRenderRangeText();
+            },
+
+            setRenderRangeText() {
+                const {invoke} = this.$refs.tuiCalendar;
+                const view = invoke('getViewName');
+                const calDate = invoke('getDate');
+                const rangeStart = invoke('getDateRangeStart');
+                const rangeEnd = invoke('getDateRangeEnd');
+                let year = calDate.getFullYear();
+                let month = calDate.getMonth() + 1;
+                let date = calDate.getDate();
+                let dateRangeText = '';
+                let endMonth, endDate, start, end;
+                switch (view) {
+                  case 'month':
+                    dateRangeText = `${year}-${month}`;
+                    break;
+                  case 'week':
+                    year = rangeStart.getFullYear();
+                    month = rangeStart.getMonth() + 1;
+                    date = rangeStart.getDate();
+                    endMonth = rangeEnd.getMonth() + 1;
+                    endDate = rangeEnd.getDate();
+                    start = `${year}-${month}-${date}`;
+                    end = `${endMonth}-${endDate}`;
+                    dateRangeText = `${start} ~ ${end}`;
+                    break;
+                  default:
+                    dateRangeText = `${year}-${month}-${date}`;
+                }
+                this.dateRange = moment(dateRangeText).format('MMMM YYYY');
+            },
+
         },
     })
 };

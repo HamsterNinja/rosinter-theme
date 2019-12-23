@@ -69,9 +69,25 @@
             				</form>
             			</div>
             		</div>
-            	</div>
+                </div>
+                
             	<div class="webinar-modules-column">
-                    <calendar style="height: 570px;"
+                    <button type="button" class="btn btn-default btn-sm move-day move-prev" data-action="move-prev" @click="prevCalendar">
+                        <svg width="19" height="37" viewBox="0 0 19 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.5 1L1 18.5L18.5 36" stroke="black"/>
+                        </svg>                                    
+                    </button>
+                    <button type="button" class="btn btn-default btn-sm move-day move-next" data-action="move-next" @click="nextCalendar">
+                        <svg width="20" height="37" viewBox="0 0 20 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 36L18.5 18.5L1 0.999998" stroke="black"/>
+                        </svg>  
+                    </button>
+                    <div class="calendar-menu">
+                        <span class="render-range">(( dateRange ))</span>
+                    </div>
+                    <calendar 
+                    ref="tuiCalendar"
+                    style="height: 570px;width: calc(100% - 100px);margin: 0 auto;"
                     :calendars="calendarData.calendarList"
                     :schedules="calendarData.scheduleList"
                     :view="calendarData.view"
