@@ -26370,6 +26370,22 @@ if (elVueQuery) {
           });
         }
       },
+      toggleDesc: function toggleDesc() {
+        var webinarItems = document.querySelectorAll('.webinar-item');
+        webinarItems.forEach(function (webinarItem) {
+          webinarItem.classList.remove('active');
+        });
+        var target = event.target.parentNode.parentNode;
+        target.classList.toggle('active');
+
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+            inline: "nearest"
+          });
+        }
+      },
       submitModuleForm: function submitModuleForm() {
         var formReg, fetchData, sendURL, response, responseData;
         return regeneratorRuntime.async(function submitModuleForm$(_context) {

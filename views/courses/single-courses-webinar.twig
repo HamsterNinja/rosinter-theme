@@ -20,9 +20,9 @@
                 {% for module in modules %}
                     <div ref='module_{{ loop.index }}' class="webinar-item" data-price='{{ module.price }}' data-name_module='{{ module.title }}' data-link_module='{{ module.link_module }}'>
                         <div class="webinar-header">
-                            <div class="webinar-title">{{ module.title }}</div>
+                            <div class="webinar-title" @click="toggleDesc">{{ module.title }}</div>
                             <div class="webinar-link">
-                                <a href="#" @click.prevent="setPrice({{ module.price }}, '{{ module.title }}', '{{ module.link_module }}', 'module_{{ loop.index }}')">Записаться</a>
+                                <a href="{{ module.link_module }}" target="_blank" rel="noopener">Записаться</a>
                             </div>
                         </div>
                         <div class="webinar-content-inner">

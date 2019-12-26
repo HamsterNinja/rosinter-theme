@@ -168,6 +168,22 @@ if (elVueQuery) {
                     })
                 }
             },
+
+            toggleDesc(){
+                let webinarItems = document.querySelectorAll('.webinar-item');
+                webinarItems.forEach(webinarItem => {
+                    webinarItem.classList.remove('active');
+                });
+                let target = event.target.parentNode.parentNode;
+                target.classList.toggle('active');
+                if(target){
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start',
+                        inline: "nearest"
+                    })
+                }
+            },
             
             async submitModuleForm(){
                 let formReg = new FormData(); 

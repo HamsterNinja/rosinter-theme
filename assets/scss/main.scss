@@ -1156,6 +1156,7 @@ input.fulltimeSubmit {
     line-height: 33px;
     color: #0C143B;
     width: calc(100% - 205px);
+    cursor: pointer;
 }
 
 .webinar-item.active .webinar-title {
@@ -1205,6 +1206,7 @@ input.fulltimeSubmit {
 .webinar-modules-info-top {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    display: none;
 }
 
 .webinar-modules-info-column {
