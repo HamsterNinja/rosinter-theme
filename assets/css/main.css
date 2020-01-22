@@ -3442,6 +3442,50 @@ button.btn.btn-default.btn-sm.move-day.move-next {
 .page-content h2 {
   margin: 15px 0;
 }
+.ask-answer {
+  font-size: 18px;
+  line-height: 25px;
+  color: #fff;
+  background: #0c143b;
+  border: 1px solid #0c143b;
+  padding: 7px 20px;
+  border-radius: 20px;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 25px;
+}
+img.alignright {
+  float: right;
+  margin: 0 0 2em 2em;
+}
+img.alignleft {
+  float: left;
+  margin: 0 2em 2em 0;
+}
+picture.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+picture.alignright {
+  float: right;
+  margin: 26px 0 1em 3em;
+}
+picture.alignleft {
+  float: left;
+  margin: 0 1em 1em 0;
+}
+img.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.alignright {
+  float: right;
+}
+.alignleft {
+  float: left;
+}
 .overlay.overlay--show {
   display: block;
   -webkit-animation: showModal 250ms ease-in-out;
