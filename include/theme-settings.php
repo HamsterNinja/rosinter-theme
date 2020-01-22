@@ -36,6 +36,21 @@ function create_my_post_types() {
             'public' => true, ) );              
 }
 
+add_action( 'init', 'courses_category_taxonomy' );
+function courses_category_taxonomy() {
+    register_taxonomy(
+        'courses_cat',
+        'courses',
+        array(
+            'show_ui'           => true,
+  		    'show_admin_column' => true,
+            'label'        => __( 'Категории' ),
+            'hierarchical' => true,
+            'show_in_rest' => true,
+        )
+    );
+}
+
 include_once(get_template_directory() . '/include/generate_featured_image.php');
 
 if( 'POST' == $_SERVER['REQUEST_METHOD'] && !empty( $_POST['action'] ) &&  $_POST['action'] == "new_reviews") {
