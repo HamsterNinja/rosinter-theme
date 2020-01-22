@@ -21,8 +21,7 @@
 								</div>
 								<div class="teacher-item-name">{{ post.title }}</div>
 								<div class="teacher-item-text">
-									<p>Региональный менеджер по персоналу</p>
-									<p>Преподаватель Университета Росинтер</p>
+									<p>{{ post.meta('position') }}</p>
 								</div>
 							</a>
 						{% endfor %}
