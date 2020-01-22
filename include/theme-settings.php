@@ -36,10 +36,10 @@ function create_my_post_types() {
             'public' => true, ) );              
 }
 
-add_action( 'init', 'courses_category_taxonomy' );
-function courses_category_taxonomy() {
+add_action( 'init', 'product_category_taxonomy' );
+function product_category_taxonomy() {
     register_taxonomy(
-        'courses_cat',
+        'cat_courses',
         'courses',
         array(
             'show_ui'           => true,
