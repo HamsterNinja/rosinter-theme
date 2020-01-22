@@ -133,12 +133,14 @@ class StarterSite extends TimberSite {
         $args = array(
             'post_type' => 'courses',
             'posts_per_page' => 10,
+            'post_parent' => 0
         );	
         $context['safe_courses'] = Timber::get_posts( $args );
 
         $args = array(
             'post_type' => 'courses',
             'posts_per_page' => 10,
+            'post_parent' => 0
         );	
         $context['wartness_courses'] = Timber::get_posts( $args );
         
