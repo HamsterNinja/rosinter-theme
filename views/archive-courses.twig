@@ -11,6 +11,7 @@
             </div>
         </div>
     </div>
+
     <div class="food-safety">
         <div class="container">
             <div class="main-page-title">Безопасность пищи</div>
@@ -53,6 +54,7 @@
             </div>
         </div>
     </div>
+
     <div class="food-safety">
         <div class="container">
             <div class="main-page-title">Для официантов</div>
@@ -95,5 +97,92 @@
             </div>
         </div>
     </div>
+
+    <div class="food-safety">
+        <div class="container">
+            <div class="main-page-title">Для барменов</div>
+            <div class="food-safety-inner">
+                {% for course in bar_courses %}
+                    <div class="food-safety-item">
+                        <div class="food-safety-item-image">
+                            {% if course.thumbnail %}
+                                <picture>
+                                    <source srcset="{{ course.thumbnail.src('medium_large')|towebp }}" type="image/webp">
+                                    <source srcset="{{ course.thumbnail.src('medium_large')|tojpg }}" type="image/jpeg">
+                                    <img src="{{ course.thumbnail.src('medium_large')|tojpg }}" alt="{{ course.title }}">
+                                </picture>
+                            {% else %}
+                                <img class="" src="{{ site.theme.link }}/assets/images/placeholder-images.webp" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="food-safety-content">
+                            <div class="food-safety-name">{{ course.title }}</div>
+                            <hr class="safety-decore">
+                            <div class="food-safety-time">
+                                {% if course.timecourse %}
+                                    <div class="food-safety-time-name">{{ course.timecourse }}</div>
+                                {% endif %}
+                                {% if course.countmodules %}
+                                    <div class="food-safety-time-value">{{ course.countmodules }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="food-safety-text">
+                                {{ course.get_content|shortcodes }}
+                            </div>
+                            <div class="food-safety-links">
+                                <a class="link-sign" href="{{ course.link }}">Записаться</a>
+                                <a class="view-more" href="{{ course.link }}">Узнать больше</a>
+                            </div>
+                        </div>
+                        <div class="food-safety-difficult">{{ course.difficult }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="food-safety">
+        <div class="container">
+            <div class="main-page-title">Для менеджеров</div>
+            <div class="food-safety-inner">
+                {% for course in manager_courses %}
+                    <div class="food-safety-item">
+                        <div class="food-safety-item-image">
+                            {% if course.thumbnail %}
+                                <picture>
+                                    <source srcset="{{ course.thumbnail.src('medium_large')|towebp }}" type="image/webp">
+                                    <source srcset="{{ course.thumbnail.src('medium_large')|tojpg }}" type="image/jpeg">
+                                    <img src="{{ course.thumbnail.src('medium_large')|tojpg }}" alt="{{ course.title }}">
+                                </picture>
+                            {% else %}
+                                <img class="" src="{{ site.theme.link }}/assets/images/placeholder-images.webp" alt="">
+                            {% endif %}
+                        </div>
+                        <div class="food-safety-content">
+                            <div class="food-safety-name">{{ course.title }}</div>
+                            <hr class="safety-decore">
+                            <div class="food-safety-time">
+                                {% if course.timecourse %}
+                                    <div class="food-safety-time-name">{{ course.timecourse }}</div>
+                                {% endif %}
+                                {% if course.countmodules %}
+                                    <div class="food-safety-time-value">{{ course.countmodules }}</div>
+                                {% endif %}
+                            </div>
+                            <div class="food-safety-text">
+                                {{ course.get_content|shortcodes }}
+                            </div>
+                            <div class="food-safety-links">
+                                <a class="link-sign" href="{{ course.link }}">Записаться</a>
+                                <a class="view-more" href="{{ course.link }}">Узнать больше</a>
+                            </div>
+                        </div>
+                        <div class="food-safety-difficult">{{ course.difficult }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
 </main>
 {% include "partials/footer.twig" %}

@@ -143,6 +143,21 @@ class StarterSite extends TimberSite {
             'post_parent' => 0
         );	
         $context['wartness_courses'] = Timber::get_posts( $args );
+
+        $args = array(
+            'post_type' => 'bar_courses',
+            'posts_per_page' => 10,
+            'post_parent' => 0
+        );	
+        $context['bar_courses'] = Timber::get_posts( $args );
+
+        $args = array(
+            'post_type' => 'bar_courses',
+            'posts_per_page' => 10,
+            'post_parent' => 0
+        );	
+        $context['manager_courses'] = Timber::get_posts( $args );
+        
         
 		return $context;
 	}
