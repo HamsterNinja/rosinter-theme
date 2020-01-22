@@ -13,7 +13,7 @@
 		<div class="about-us-title">{{ post.about_us_title }}</div>
 		<div class="about-us-text">{{ post.about_us_text }}</div>
 		<div class="about-us-triggers">
-			{% for item in post.triggers_1 %}
+			{% for item in post.meta('triggers_1') %}
 				<div class="about-us-trigger">
 					<div class="about-us-trigger-img">
 						<img src="{{ Image(item.icon).src }}" alt="">
@@ -30,7 +30,7 @@
 			{{ post.test_blue }}
 		</div>
 		<div class="about-us-triggers">
-			{% for item in post.triggers_1 %}
+			{% for item in post.meta('triggers_2') %}
 				<div class="about-us-trigger">
 					<div class="about-us-trigger-img">
 						<img src="{{ Image(item.icon).src }}" alt="">
