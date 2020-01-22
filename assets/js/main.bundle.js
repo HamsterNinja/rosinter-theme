@@ -26475,6 +26475,14 @@ if (elVueQuery) {
 }
 
 ;
+$(document).ready(function () {
+  $(".main-header-map a").click(function (event) {
+    event.preventDefault();
+    $([document.documentElement, document.body]).animate({
+      scrollTop: $("#main-footer").offset().top
+    }, 2000);
+  });
+});
 
 /***/ }),
 /* 261 */
