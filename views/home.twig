@@ -1,14 +1,19 @@
 {% include "partials/header.twig" %}
 <main class='main-content'>
+
+{% for banner in banners %}
 <div class="main-banner" style="background: url({{ site.theme.link }}/assets/images/ban_decore.png)0% 101%,linear-gradient(121.06deg, #FFFFFF 12.18%, rgba(255, 255, 255, 0) 60.29%), linear-gradient(179.29deg, #FFFFFF 1.41%, rgba(141, 141, 141, 0) 65.56%),url({{ site.theme.link }}/assets/images/slide.jpg) 0 100%;">
 	<div class="container">
-		<div class="main-banner-title">Мы готовим <span>профессионалов</span></div>
+		<div class="main-banner-title">{{ banner.title }}</div>
 		<div class="main-banner-text">
-			<p>Важнейшая составляющая успеха любого бизнеса – это люди. Мы искренне верим, что каждый человек обладает уникальными талантами, которые необходимо развивать в течение всей жизни.</p>
+			<p>{{ banner.text }}</p>
 		</div>
-		<div class="main-banner-link"><a href="">Узнать подробнее</a></div>
+		<div class="main-banner-link">
+			<a href="{{ banner.button_link }}">Узнать подробнее</a>
+		</div>
 	</div>	
 </div>
+{% endfor %}
 
 {% if news_items is not empty  %}
 <div class="trainings_block">
@@ -48,23 +53,22 @@
 						<div class="food-safety-name">{{ course.title }}</div>
 						<hr class="safety-decore">
 						<div class="food-safety-time">
-							<div class="food-safety-time-name">Очно (2 дня 16 часов)</div>
-							<div class="food-safety-time-value">5 занятий</div>
+							{% if course.timecourse %}
+								<div class="food-safety-time-name">{{ course.timecourse }}</div>
+							{% endif %}
+							{% if course.countmodules %}
+								<div class="food-safety-time-value">{{ course.countmodules }}</div>
+							{% endif %}
 						</div>
 						<div class="food-safety-text">
-							<p>В результате обучения:</p>
-								<p>· Вы поймете, что такое система стандартов ХАССП в общественном питании применительно к российской действительности.</p>
-								<p>· Научитесь использовать ее для повышения эффективности работы своей компании и успешного прохождения проверок контролирующих органов.</p>
-								<p>· Получите работающие инструменты внедрения системы.</p>
-								<p>· Выполните большое количество интересных практических заданий.</p>
-							<p>Всем участникам, прошедшим обучение, выдается Сертификат о повышении квалификации установленного образца.</p>
+							{{ course.get_content|shortcodes }}
 						</div>
 						<div class="food-safety-links">
 							<a class="link-sign" href="{{ course.link }}">Записаться</a>
 							<a class="view-more" href="{{ course.link }}">Узнать больше</a>
 						</div>
 					</div>
-					<div class="food-safety-difficult">Начинающий</div>
+					<div class="food-safety-difficult">{{ course.difficult }}</div>
 				</div>
 			{% endfor %}
 		</div>
@@ -89,8 +93,7 @@
 					</div>
 					<div class="teacher-item-name">{{ teacher.title }}</div>
 					<div class="teacher-item-text">
-						<p>Региональный менеджер по персоналу</p>
-						<p>Преподаватель Университета Росинтер</p>
+						<p>{{ teacher.position }}</p>
 					</div>
 				</a>
 			{% endfor %}

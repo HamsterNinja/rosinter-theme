@@ -6,6 +6,24 @@ acf_add_local_field_group(array(
 	'title' => 'Модули',
 	'fields' => array(
 		array(
+			'key' => 'field_5e27ffc6bdfae_timecourse',
+			'label' => 'Время обучения',
+			'name' => 'timecourse',
+			'type' => 'text',
+		),
+		array(
+			'key' => 'field_5e27ffc6bdfae_countmodules',
+			'label' => 'Количество занятий',
+			'name' => 'countmodules',
+			'type' => 'text',
+		),
+		array(
+			'key' => 'field_5e27ffc6bdfae_difficult',
+			'label' => 'Сложность',
+			'name' => 'difficult',
+			'type' => 'text',
+		),
+		array(
 			'key' => 'field_5dfb5fd34124b',
 			'label' => 'Модули',
 			'name' => 'modules',
@@ -113,4 +131,64 @@ if( function_exists('acf_add_local_field_group') ):
 		),
 	));
 	
+endif;
+
+if( function_exists('acf_add_local_field_group') ):
+
+    acf_add_local_field_group(array (
+        'key' => 'group_5aa5652c21fba',
+        'title' => 'Основные настройки',
+        'fields' => array (
+            array (
+                'key' => 'field_5aa784697e3cc',
+                'label' => 'Номер телефон',
+                'name' => 'phone',
+                'type' => 'text',   
+            ),
+            array (
+                'key' => 'field_5aa7847d7e3cd',
+                'label' => 'Почта',
+                'name' => 'mail',
+                'type' => 'text',          
+			),
+			array(
+				'key' => 'field_5c87a86bdb0fb',
+				'label' => 'Баннеры',
+				'name' => 'banners',
+				'type' => 'repeater',
+				'layout' => 'row',
+				'button_label' => '',
+				'sub_fields' => array(
+					array(
+						'key' => 'field_3c47a6cedb0ff_title',
+						'label' => 'Заголовок',
+						'name' => 'title',
+						'type' => 'text',
+					),
+					array(
+						'key' => 'field_3c47a6cedb0ff_text',
+						'label' => 'Текст',
+						'name' => 'text',
+						'type' => 'text',
+					),
+					array(
+						'key' => 'field_3c47a6cedb0ff',
+						'label' => 'Ссылка',
+						'name' => 'button_link',
+						'type' => 'text',
+					)
+				),
+			),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'options_page',
+                    'operator' => '==',
+                    'value' => 'options',
+                ),
+            ),
+        ),
+    ));
+
 endif;

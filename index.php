@@ -24,6 +24,9 @@ if ( is_home() ) {
 	];
 	$context['news_items'] = Timber::get_posts( $args );
 
+	$banners = get_field('banners', 'options');
+	$context['banners'] = $banners;
+
 	Timber::render( $templates, $context );
 }
 else{
