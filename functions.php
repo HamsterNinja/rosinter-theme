@@ -129,6 +129,18 @@ class StarterSite extends TimberSite {
         $context['site'] = $this;
         $context['user_login'] = get_the_author_meta( 'user_login', wp_get_current_user()->ID );
         $context['is_user_logged_in'] = is_user_logged_in();
+
+        $args = array(
+            'post_type' => 'courses',
+            'posts_per_page' => 10,
+        );	
+        $context['safe_courses'] = Timber::get_posts( $args );
+
+        $args = array(
+            'post_type' => 'courses',
+            'posts_per_page' => 10,
+        );	
+        $context['wartness_courses'] = Timber::get_posts( $args );
         
 		return $context;
 	}
