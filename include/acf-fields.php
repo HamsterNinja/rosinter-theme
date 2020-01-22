@@ -76,3 +76,41 @@ acf_add_local_field_group(array(
 ));
 
 endif;
+
+if( function_exists('acf_add_local_field_group') ):
+
+	acf_add_local_field_group(array(
+		'key' => 'group_5e27ff90ccbf8',
+		'title' => 'Учитель',
+		'fields' => array(
+			array(
+				'key' => 'field_5e27ffc6bdfae',
+				'label' => 'Должность',
+				'name' => 'position',
+				'type' => 'text',
+			),
+			array(
+				'key' => 'field_5e27ffe6bdfaf',
+				'label' => 'Галерея',
+				'name' => 'gallery',
+				'type' => 'gallery',
+			),
+			array(
+				'key' => 'field_8c88f8f845922_links',
+				'label' => 'Ссылки',
+				'name' => 'links',
+				'type' => 'wysiwyg'
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'post_type',
+					'operator' => '==',
+					'value' => 'teachers',
+				),
+			),
+		),
+	));
+	
+endif;

@@ -3,7 +3,7 @@
 <div class="teachers_page top_padding">
 	<div class="container">
 		<div class="all-page-title">
-			<h1>Эксперт по пищевой безопастности</h1>
+			<h1>Эксперт по пищевой безопасности</h1>
 		</div>
 		<div class="hassp-teacher-item">
 			<div class="hassp-teacher-item-img">
@@ -20,7 +20,7 @@
 			<div class="hassp-teacher-item-info">
 				<div class="hassp-teacher-item-name">{{ post.title }}</div>
 				<div class="hassp-teacher-item-text">
-					<p>старший менеджер по качеству департамента закупок и логистики ООО «Росинтер Ресторантс».</p>
+					<p>{{ post.meta('position') }}</p>
 				</div>
 			</div>
 		</div>
@@ -29,19 +29,14 @@
 				{{ post.get_content|shortcodes }} 
 			</div>
 			<div class="hasp-teacher-gallery">
-				<a href="" class="gallery-item"><img src="{{ site.theme.link }}/assets/images/sert-1.jpg" alt=""></a>
-				<a href="" class="gallery-item"><img src="{{ site.theme.link }}/assets/images/sert-2.jpg" alt=""></a>
-				<a href="" class="gallery-item"><img src="{{ site.theme.link }}/assets/images/sert-3.jpg" alt=""></a>
+				{% for image in post.meta('gallery') %}
+					<a href="{{ Image(image)|resize(370) }}" class="gallery-item">
+						<img src="{{ Image(image) }}"/>
+					</a>
+				{% endfor %}
 			</div>
 			<div class="hasp-teatcher-text">
-				<p><b>Интервью:</b></p>
-				<p>
-					<a href="https://www.cfo-russia.ru/stati/index.php?article=50466">https://www.cfo-russia.ru/stati/index.php?article=50466</a><br>
-					<a href="https://kachestvo.pro/kachestvo-produktsii/standartizatsiya/budem-druzhit-standartami/">https://kachestvo.pro/kachestvo-produktsii/standartizatsiya/budem-druzhit-standartami/</a><br>
-					<a href="https://kachestvo.pro/kachestvo-produktsii/kontrol/audity-ne-dlya-galochki/">https://kachestvo.pro/kachestvo-produktsii/kontrol/audity-ne-dlya-galochki/</a>
-				</p>
-				<p><b>Статьи:</b></p> 
-				<p><a href="https://www.retail.ru/cases/rosinter-restorants-i-fgis-merkuriy-opyt-vnedreniya-v-sfere-horeca/">https://www.retail.ru/cases/rosinter-restorants-i-fgis-merkuriy-opyt-vnedreniya-v-sfere-horeca/</a></p>
+				{{ post.meta('links') }}
 			</div>
 		</div>
 	</div>

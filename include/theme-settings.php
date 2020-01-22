@@ -20,7 +20,7 @@ function create_my_post_types() {
          array(
             'labels' => array( 'name' => __( 'Отзывы' ),
             'singular_name' => __( 'Отзыв' ) ),
-            'supports'      => array( 'title', 'editor', 'thumbnail','excerpt'),
+            'supports'      => array( 'title', 'editor', 'thumbnail'),
             'has_archive' => true,
             'show_in_rest' => true,
             'public' => true, ) );  
@@ -30,7 +30,7 @@ function create_my_post_types() {
          array(
             'labels' => array( 'name' => __( 'Учителя' ),
             'singular_name' => __( 'Учитель' ) ),
-            'supports'      => array( 'title','editor', 'thumbnail','excerpt'),
+            'supports'      => array( 'title','editor', 'thumbnail'),
             'has_archive' => true,
             'show_in_rest' => true,
             'public' => true, ) );              
