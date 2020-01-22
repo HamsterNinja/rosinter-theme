@@ -2879,6 +2879,7 @@ hr.safety-decore {
   font-size: 36px;
   line-height: 49px;
   color: #fe334a;
+  margin-right: 5px;
 }
 .hassp-title {
   font-weight: bold;
@@ -3487,6 +3488,10 @@ img.aligncenter {
 }
 .alignleft {
   float: left;
+}
+.flex-block {
+  display: flex;
+  justify-content: flex-start;
 }
 .overlay.overlay--show {
   display: block;
