@@ -219,7 +219,7 @@ if( function_exists('acf_add_local_field_group') ):
 			),
 			array(
 				'key' => 'field_3c47a6cedb0ff_about_us_text',
-				'label' => 'О нас заголовок',
+				'label' => 'О нас',
 				'name' => 'about_us_text',
 				'type' => 'text',
 			),
