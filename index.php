@@ -27,6 +27,8 @@ if ( is_home() ) {
 	$banners = get_field('banners', 'options');
 	$context['banners'] = $banners;
 
+	$context['hometext'] = get_field('hometext', 'options');
+	
 	Timber::render( $templates, $context );
 }
 else{

@@ -152,6 +152,12 @@ if( function_exists('acf_add_local_field_group') ):
                 'type' => 'text',          
 			),
 			array(
+				'key' => 'field_8c88f8f845922_hometext',
+				'label' => 'Текст на главной',
+				'name' => 'hometext',
+				'type' => 'wysiwyg'
+			),
+			array(
 				'key' => 'field_5c87a86bdb0fb',
 				'label' => 'Баннеры',
 				'name' => 'banners',
