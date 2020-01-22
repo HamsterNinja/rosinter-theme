@@ -198,3 +198,75 @@ if( function_exists('acf_add_local_field_group') ):
     ));
 
 endif;
+
+if( function_exists('acf_add_local_field_group') ):
+
+	acf_add_local_field_group(array(
+		'key' => 'group_5e285aa0bd605',
+		'title' => 'О нас',
+		'fields' => array(
+			array(
+				'key' => 'field_5e285ab118c5a',
+				'label' => 'Текст над баннером',
+				'name' => 'banner_text',
+				'type' => 'wysiwyg',
+			),
+			array(
+				'key' => 'field_5e285ae218c5b',
+				'label' => 'Тригеры 1',
+				'name' => 'triggers_1',
+				'type' => 'repeater',
+				'sub_fields' => array(
+					array(
+						'key' => 'field_5e285b5418c5c',
+						'label' => 'Иконка',
+						'name' => 'icon',
+						'type' => 'image',
+					),
+					array(
+						'key' => 'field_5e285b6218c5d',
+						'label' => 'Название',
+						'name' => 'text',
+						'type' => 'text',
+					),
+				),
+			),
+			array(
+				'key' => 'field_5e285b9818c61',
+				'label' => 'Тест на синем',
+				'name' => 'test_blue',
+				'type' => 'wysiwyg',
+			),
+			array(
+				'key' => 'field_5e285b9518c5e',
+				'label' => 'Тригеры 2',
+				'name' => 'triggers_2',
+				'type' => 'repeater',
+				'sub_fields' => array(
+					array(
+						'key' => 'field_5e285b9518c5f',
+						'label' => 'Иконка',
+						'name' => 'icon',
+						'type' => 'image',
+					),
+					array(
+						'key' => 'field_5e285b9518c60',
+						'label' => 'Название',
+						'name' => 'text',
+						'type' => 'text',
+					),
+				),
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'page',
+					'operator' => '==',
+					'value' => '10',
+				),
+			),
+		),
+	));
+	
+endif;
