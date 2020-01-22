@@ -4,10 +4,10 @@
 		<div class="container">
 			<div class="hassp-before-title">ХАССП</div>
 			<div class="hassp-title">Онлайн курс</div>
-			<div class="future-content">
-				Онлайн - курс находится в разработке.<br>Мы будем рады встретиться с Вами на онлайн обучении в феврале 2020!
-			</div>
 		</div>
+	</div>
+	<div class="page-content container">
+		{{ post.get_content|shortcodes }} 
 	</div>
 </main>
 {% include "partials/footer.twig" %}

@@ -1469,6 +1469,32 @@ button.btn.btn-default.btn-sm.move-day.move-next {
     margin-bottom: 15px;
 }
 
+.page-content{
+    padding-bottom: 15px;
+}
+
+.page-content p{
+    margin: 10px 0;
+}
+
+.page-content ul{
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.page-content ul li{
+    margin: 10px 0;
+}
+
+.page-content h1{
+    margin: 15px 0;
+}
+
+.page-content h2{
+    margin: 15px 0;
+}
+
 @import 'pages/home';
 @import 'components/buttons';
 @import 'components/modals';
