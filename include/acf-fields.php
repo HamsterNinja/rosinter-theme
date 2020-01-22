@@ -212,6 +212,18 @@ if( function_exists('acf_add_local_field_group') ):
 				'type' => 'wysiwyg',
 			),
 			array(
+				'key' => 'field_3c47a6cedb0ff_about_us_title',
+				'label' => 'О нас заголовок',
+				'name' => 'about_us_title',
+				'type' => 'text',
+			),
+			array(
+				'key' => 'field_3c47a6cedb0ff_about_us_text',
+				'label' => 'О нас заголовок',
+				'name' => 'about_us_text',
+				'type' => 'text',
+			),
+			array(
 				'key' => 'field_5e285ae218c5b',
 				'label' => 'Тригеры 1',
 				'name' => 'triggers_1',
