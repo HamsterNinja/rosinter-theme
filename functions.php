@@ -133,28 +133,61 @@ class StarterSite extends TimberSite {
         $args = array(
             'post_type' => 'courses',
             'posts_per_page' => 10,
-            'post_parent' => 0
+            'post_parent' => 0,
+            'tax_query' => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'cat_courses',
+                    'field' => 'slug',
+                    'terms' => 'bezopasnost-pishhi',
+                )
+            )
         );	
         $context['safe_courses'] = Timber::get_posts( $args );
 
         $args = array(
             'post_type' => 'courses',
             'posts_per_page' => 10,
-            'post_parent' => 0
+            'post_parent' => 0,
+            'tax_query' => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'cat_courses',
+                    'field' => 'slug',
+                    'terms' => 'dlya-oficiantov',
+                )
+            )
         );	
         $context['wartness_courses'] = Timber::get_posts( $args );
 
         $args = array(
-            'post_type' => 'bar_courses',
+            'post_type' => 'courses',
             'posts_per_page' => 10,
-            'post_parent' => 0
+            'post_parent' => 0,
+            'posts_per_page' => -1,
+            'tax_query' => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'cat_courses',
+                    'field' => 'slug',
+                    'terms' => 'dlya-barmenov',
+                )
+            )   
         );	
         $context['bar_courses'] = Timber::get_posts( $args );
 
         $args = array(
-            'post_type' => 'bar_courses',
+            'post_type' => 'courses',
             'posts_per_page' => 10,
-            'post_parent' => 0
+            'post_parent' => 0,
+            'tax_query' => array(
+                'relation' => 'AND',
+                array(
+                    'taxonomy' => 'cat_courses',
+                    'field' => 'slug',
+                    'terms' => 'dlya-menedzherov',
+                )
+            ) 
         );	
         $context['manager_courses'] = Timber::get_posts( $args );
         
