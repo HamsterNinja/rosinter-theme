@@ -2,9 +2,9 @@
 <main class='main-content'>
 <div class="main-banner" style="background: url({{ site.theme.link }}/assets/images/ban_decore.png) no-repeat 0% 101%,linear-gradient(132.63deg, #FFFFFF 12.88%, rgba(255, 255, 255, 0) 85.91%), linear-gradient(179.5deg, #FFFFFF 1.41%, rgba(254, 254, 254, 0) 42.95%),url({{ site.theme.link }}/assets/images/hassp.jpg);">
 	<div class="container">
-		<div class="main-banner-title" style="max-width: 100%;"><span>ХАССП</span> как<br> конкурентное преимущество</div>
+		<div class="main-banner-title" style="max-width: 100%;"><span>{{ post.title }}</span> как<br> конкурентное преимущество</div>
 		<div class="main-banner-text">
-			<p>ХАССП (HACCP — Hazard Analysis and Critical Control Point) — анализ рисков и контроль критических точек. Основа производства безопасной пищевой продукции.</p>
+			{{ post.get_content|shortcodes }} 
 		</div>
 	</div>	
 </div>
@@ -82,41 +82,33 @@
 				<div class="hassp-teacher-item">
 					<div class="hassp-teacher-item-img"><img src="{{ site.theme.link }}/assets/images/teach.jpg" alt=""></div>
 					<div class="hassp-teacher-item-info">
-						<div class="hassp-teacher-item-name">Ольга Заваловская</div>
+						<div class="hassp-teacher-item-name">{{ Post(post.expert).title }}</div>
 						<div class="hassp-teacher-item-text">
-							<p>старший менеджер по качеству департамента закупок и логистики ООО «Росинтер Ресторантс».</p>
+							<p>{{ Post(post.expert).position }}</p>
 						</div>
 						<div class="hassp-view-more">Узнать подробнее</div>
 					</div>
 				</div>
+
 				<div class="hassp-teacher-content">
 					<div class="hasp-teatcher-text">
-						<p>С 2016 года работает в компании «Росинтер Ресторантс». Занимается внедрением системы менеджмента безопасности пищевой продукции по международному образцу, внедрением ФГИС «Меркурий». Развивает направление GFSI среди поставщиков.</p> 
-						<p>С 01 июля 2019 года занимает пост Заместителя Коммерческого Директора по закупочным процессам.</p>
-						<p>Является аттестованным аудитором органа по сертификации NSF. Получила три награды в 2017-2018 году от NSF по внедрению требований международных стандартов.</p>
-						<p>Получила награду  за лучшее выступление по теме ФГИС «Меркурий» в 2018 году  на Девятой церемонии награждения лучших спикеров CFO-Russia.ru.</p>
+						{{ Post(post.expert).content }}
 					</div>
 					<div class="hasp-teacher-gallery">
-						<a href="" class="gallery-item"><img src="{{ site.theme.link }}/assets/images/sert-1.jpg" alt=""></a>
-						<a href="" class="gallery-item"><img src="{{ site.theme.link }}/assets/images/sert-2.jpg" alt=""></a>
-						<a href="" class="gallery-item"><img src="{{ site.theme.link }}/assets/images/sert-3.jpg" alt=""></a>
+						{% for image in post.meta('gallery') %}
+							<a href="{{ Image(image)|resize(370) }}" class="gallery-item">
+								<img src="{{ Image(image) }}"/>
+							</a>
+						{% endfor %}
 					</div>
 					<div class="hasp-teatcher-text">
-						<p>Является приглашенным лектором по ХАССП и пищевой безопасности в Российском Экономическом Университете им. Г.В. Плеханова и в Российской Академии Народного Хозяйства и Государственной Службы.</p> 
-						<p><b>Интервью:</b></p>
-						<p>
-							<a href="https://www.cfo-russia.ru/stati/index.php?article=50466">https://www.cfo-russia.ru/stati/index.php?article=50466</a><br>
-							<a href="https://kachestvo.pro/kachestvo-produktsii/standartizatsiya/budem-druzhit-standartami/">https://kachestvo.pro/kachestvo-produktsii/standartizatsiya/budem-druzhit-standartami/</a><br>
-							<a href="https://kachestvo.pro/kachestvo-produktsii/kontrol/audity-ne-dlya-galochki/">https://kachestvo.pro/kachestvo-produktsii/kontrol/audity-ne-dlya-galochki/</a>
-						</p>
-						<p><b>Статьи:</b></p> 
-						<p><a href="https://www.retail.ru/cases/rosinter-restorants-i-fgis-merkuriy-opyt-vnedreniya-v-sfere-horeca/">https://www.retail.ru/cases/rosinter-restorants-i-fgis-merkuriy-opyt-vnedreniya-v-sfere-horeca/</a></p>
+						{{ Post(post.expert).meta('links') }}
 					</div>
 					<div class="hassp-hide">Свернуть</div>
 				</div>
 			</div>
 			<div class="hassp-content-row">
-				<div class="hassp-content-row-title">Что дает внедрение ХАССП:</div>
+				<div class="hassp-content-row-title">Что дает внедрение {{ post.title }}:</div>
 				<div class="hassp-content-row-info">
 					<table>
 						<tbody>
@@ -135,13 +127,13 @@
 							<tr>
 								<td>Переход от корректирующих мер к предупреждающим (работа на предотвращение брака, а не на поиски виновных при появлении брака)</td>
 								<td>Снижение жалоб потребителей за счет повышения стандартов качества и безопасности</td>
-								<td>Повышение конкурентноспособности за счет  признания системы ХАССП на рынке</td>
+								<td>Повышение конкурентноспособности за счет  признания системы {{ post.title }} на рынке</td>
 								<td></td>
 							</tr>
 							<tr>
 								<td>Прозрачность процесса и назначение ответственных.</td>
 								<td></td>
-								<td>Повышение инвестиционной привлекательности за счет улучшенных показателей (минимум брака,  статус «ХАССП» и т.д.)</td>
+								<td>Повышение инвестиционной привлекательности за счет улучшенных показателей (минимум брака,  статус «{{ post.title }}» и т.д.)</td>
 								<td></td>
 							</tr>
 						</tbody>

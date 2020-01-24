@@ -4174,6 +4174,26 @@ img.aligncenter {
     color: #0c143b;
     margin-bottom: 30px;
   }
+  .main-banner-title {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 30px;
+    max-width: 540px;
+    color: #0c143b;
+    margin-bottom: 8px;
+  }
+  .main-banner-text {
+    max-width: 540px;
+    margin-bottom: 13px;
+  }
+  .main-banner-text p {
+    font-size: 15px;
+    line-height: 21px;
+    color: #0c143b;
+  }
+  .main-banner {
+    background-position: 22% 101%, 0 0, 0 0, -145px 100% !important;
+  }
 }
 @media screen and (min-width: 320px) {
   html, body {
