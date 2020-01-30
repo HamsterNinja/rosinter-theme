@@ -96,7 +96,7 @@
 						{{ Post(post.expert).content }}
 					</div>
 					<div class="hasp-teacher-gallery">
-						{% for image in post.meta('gallery') %}
+						{% for image in Post(post.expert).meta('gallery') %}
 							<a href="{{ Image(image)|resize(370) }}" class="gallery-item">
 								<img src="{{ Image(image) }}"/>
 							</a>
