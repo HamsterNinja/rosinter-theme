@@ -77,6 +77,7 @@
 			</div>
 		</div>
 		<div class="hassp-content-column">
+			{% if post.expert %}
 			<div class="hassp-content-row">
 				<div class="hassp-content-row-title">Преподаватель – эксперт:</div>
 				<div class="hassp-teacher-item">
@@ -86,7 +87,7 @@
 						<div class="hassp-teacher-item-text">
 							<p>{{ Post(post.expert).position }}</p>
 						</div>
-						<div class="hassp-view-more">Узнать подробнее</div>
+						<a href="{{ Post(post.expert).link }}" class="hassp-view-more">Узнать подробнее</a>
 					</div>
 				</div>
 
@@ -104,9 +105,10 @@
 					<div class="hasp-teatcher-text">
 						{{ Post(post.expert).meta('links') }}
 					</div>
-					<div class="hassp-hide">Свернуть</div>
 				</div>
 			</div>
+			{% endif %}
+
 			<div class="hassp-content-row">
 				<div class="hassp-content-row-title">Что дает внедрение {{ post.title }}:</div>
 				<div class="hassp-content-row-info">

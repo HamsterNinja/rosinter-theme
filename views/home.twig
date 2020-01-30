@@ -39,7 +39,7 @@
 
 <div class="food-safety">
 	<div class="container">
-		<div class="main-page-title">Курсы</div>
+		<h2 class="main-page-title">Курсы</h2>
 		<div class="food-safety-inner">
 			{% for course in courses %}
 				<div class="food-safety-item">
@@ -79,9 +79,10 @@
 		</div>
 	</div>
 </div>
+
 <div class="teachers_block">
 	<div class="container">
-		<div class="main-page-title">Преподаватели</div>
+		<h2 class="main-page-title">Преподаватели</h2>
 		<div class="teachers_block-inner">
 			{% for teacher in teachers %}
 				<a href="{{ teacher.link }}" class="teacher-item">
@@ -105,5 +106,15 @@
 		</div>
 	</div>
 </div>
+
+<div class="food-safety">
+	<div class="container">
+		<h2 class="main-page-title">Тестирование</h2>
+		<div class="food-safety-inner">
+
+		</div>
+	</div>
+</div>
+
 </main>
 {% include "partials/footer.twig" %}

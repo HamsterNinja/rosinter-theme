@@ -1562,6 +1562,11 @@ img.aligncenter {
     display: block;
 }
 
+.review-item-img img {
+    width: 136px;
+    height: 136px;
+    object-fit: cover;
+}
 @import 'pages/home';
 @import 'components/buttons';
 @import 'components/modals';

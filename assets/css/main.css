@@ -3751,6 +3751,11 @@ img.aligncenter {
 .projects-slider.food-safety-inner {
   display: block;
 }
+.review-item-img img {
+  width: 136px;
+  height: 136px;
+  object-fit: cover;
+}
 .overlay.overlay--show {
   display: block;
   -webkit-animation: showModal 250ms ease-in-out;
