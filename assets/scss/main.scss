@@ -2,6 +2,8 @@
 @import 'vendors/tui-calendar';
 @import 'vendors/tui-date-picker';
 @import 'vendors/tui-time-picker';
+@import 'vendors/slick';
+@import 'vendors/slick-theme';
 
 html {
     box-sizing: border-box;
@@ -1554,6 +1556,10 @@ img.aligncenter {
 .flex-block {
     display: flex;
     justify-content: flex-start;
+}
+
+.projects-slider.food-safety-inner{
+    display: block;
 }
 
 @import 'pages/home';

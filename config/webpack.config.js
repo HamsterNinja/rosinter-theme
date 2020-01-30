@@ -114,4 +114,7 @@ module.exports = {
       'vue$': 'vue/dist/vue.common.js'
     }
   },
+  watchOptions: {
+    poll: 1000
+  }
 };
