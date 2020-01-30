@@ -14,7 +14,7 @@
 
     <div class="food-safety">
         <div class="container">
-            <div class="main-page-title">Безопасность пищи</div>
+            <div class="main-page-title">Безопасность пищи (ХАССП)</div>
             <div class="food-safety-inner">
                 {% for course in safe_courses %}
                     <div class="food-safety-item">
@@ -44,8 +44,7 @@
                                 {{ course.get_content|shortcodes }}
                             </div>
                             <div class="food-safety-links">
-                                <a class="link-sign" href="{{ course.link }}">Записаться</a>
-                                <a class="view-more" href="{{ course.link }}">Узнать больше</a>
+                                <a class="link-sign" href="{{ course.link }}">Узнать больше</a>
                             </div>
                         </div>
                         <div class="food-safety-difficult">{{ course.difficult }}</div>
@@ -87,8 +86,7 @@
                                 {{ course.get_content|shortcodes }}
                             </div>
                             <div class="food-safety-links">
-                                <a class="link-sign" href="{{ course.link }}">Записаться</a>
-                                <a class="view-more" href="{{ course.link }}">Узнать больше</a>
+                                <a class="link-sign" href="{{ course.link }}">Узнать больше</a>
                             </div>
                         </div>
                         <div class="food-safety-difficult">{{ course.difficult }}</div>
@@ -130,8 +128,7 @@
                                 {{ course.get_content|shortcodes }}
                             </div>
                             <div class="food-safety-links">
-                                <a class="link-sign" href="{{ course.link }}">Записаться</a>
-                                <a class="view-more" href="{{ course.link }}">Узнать больше</a>
+                                <a class="link-sign" href="{{ course.link }}">Узнать больше</a>
                             </div>
                         </div>
                         <div class="food-safety-difficult">{{ course.difficult }}</div>
