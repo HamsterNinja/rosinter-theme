@@ -14,7 +14,7 @@
 
     <div class="food-safety">
         <div class="container">
-            <div class="main-page-title">Безопасность пищи (HASSP)</div>
+            <a href="{{ site.link }}/cat_courses/bezopasnost-pishhi/" class="main-page-title">Безопасность пищи (HASSP)</a>
             <div class="food-safety-inner {{ (safe_courses|length > 3) ? 'projects-slider' : '' }}">
                 {% for course in safe_courses %}
                     <div class="food-safety-item" style="{{ (safe_courses|length == 1) ? 'grid-column: 2 / 3;' : '' }}">
@@ -56,7 +56,7 @@
 
     <div class="food-safety">
         <div class="container">
-            <div class="main-page-title">Для сотрудников зала</div>
+            <a href="{{ site.link }}/cat_courses/dlya-oficiantov/" class="main-page-title">Для сотрудников зала</a>
             <div class="food-safety-inner {{ (wartness_courses|length > 3) ? 'projects-slider' : '' }}">
                 {% for course in wartness_courses %}
                     <div class="food-safety-item" style="{{ (wartness_courses|length == 1) ? 'grid-column: 2 / 3;' : '' }}">
@@ -98,7 +98,7 @@
 
     <div class="food-safety">
         <div class="container">
-            <div class="main-page-title">Для сотрудников кухни</div>
+            <a href="{{ site.link }}/cat_courses/dlya-barmenov/" class="main-page-title">Для сотрудников кухни</a>
             <div class="food-safety-inner {{ (bar_courses|length > 3) ? 'projects-slider' : '' }}">
                 {% for course in bar_courses %}
                     <div class="food-safety-item" style="{{ (bar_courses|length == 1) ? 'grid-column: 2 / 3;' : '' }}">
@@ -140,7 +140,7 @@
 
     <div class="food-safety">
         <div class="container">
-            <div class="main-page-title">Для руководителей</div>
+            <a href="{{ site.link }}/cat_courses/dlya-menedzherov/" class="main-page-title">Для руководителей</a>
             <div class="food-safety-inner {{ (manager_courses|length > 3) ? 'projects-slider' : '' }}">
                 {% for course in manager_courses %}
                     <div class="food-safety-item" style="{{ (manager_courses|length == 1) ? 'grid-column: 2 / 3;' : '' }}">

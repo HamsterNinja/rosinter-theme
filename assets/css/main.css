@@ -2577,6 +2577,11 @@ ul {
   background-repeat: no-repeat;
   background-position: 0 50%;
   padding-left: 41px;
+  text-decoration: none;
+  display: block;
+}
+a.main-page-title:hover {
+  text-decoration: underline;
 }
 .food-safety-inner {
   display: grid;

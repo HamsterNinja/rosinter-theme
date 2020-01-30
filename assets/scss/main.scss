@@ -166,6 +166,12 @@ ul {
     background-repeat: no-repeat;
     background-position: 0 50%;
     padding-left: 41px;
+    text-decoration: none;
+    display: block;
+}
+
+a.main-page-title:hover {
+    text-decoration: underline;
 }
 
 .food-safety-inner {
@@ -1441,9 +1447,11 @@ button#button-submit {
 .webinar-modules-column {
     position: relative;
 }
+
 .webinar-modules-column:first-child {
     margin-top: 48px;
 }
+
 .render-range {
     font-weight: bold;
     font-size: 24px;
@@ -1473,33 +1481,33 @@ button.btn.btn-default.btn-sm.move-day.move-next {
     margin-bottom: 15px;
 }
 
-.page-content{
+.page-content {
     padding-bottom: 15px;
 }
 
-.page-content p{
+.page-content p {
     margin: 10px 0;
 }
 
-.page-content ul{
+.page-content ul {
     padding-left: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 
-.page-content ul li{
+.page-content ul li {
     margin: 10px 0;
 }
 
-.page-content h1{
+.page-content h1 {
     margin: 15px 0;
 }
 
-.page-content h2{
+.page-content h2 {
     margin: 15px 0;
 }
 
-.ask-answer{
+.ask-answer {
     font-size: 18px;
     line-height: 25px;
     color: #fff;
@@ -1558,7 +1566,7 @@ img.aligncenter {
     justify-content: flex-start;
 }
 
-.projects-slider.food-safety-inner{
+.projects-slider.food-safety-inner {
     display: block;
 }
 
@@ -1567,6 +1575,7 @@ img.aligncenter {
     height: 136px;
     object-fit: cover;
 }
+
 @import 'pages/home';
 @import 'components/buttons';
 @import 'components/modals';
