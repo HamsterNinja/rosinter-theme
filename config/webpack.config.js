@@ -9,10 +9,16 @@ const config = require('./config.js');
 module.exports = {
   plugins: [
     new webpack.DefinePlugin({
-      'process.env': { 'NODE_ENV': "'development'" }
+      'process.env': { 'NODE_ENV': "'production'" }
     }),
     new VueLoaderPlugin(),
-    // new UglifyJsPlugin(),
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        output: {
+          comments: false
+        }
+      }
+    }),
     new BrowserSyncPlugin( {
       proxy: config.url,
       files: [
